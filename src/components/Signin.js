@@ -52,7 +52,7 @@ class Signin extends PureComponent {
   /**
    * @method
    * @name handleEdit
-   * to update the existing task
+   * to update the existing User
    */
   handleEdit = (indexValue) => {
     this.setState({
@@ -72,11 +72,11 @@ class Signin extends PureComponent {
 
   /**
    * @method @name handleDelete
-   * to delete the specific task
+   * to delete the specific User
    */
   handleDelete = (indexValue) => {
     confirm({
-      title: "Are you sure delete this task?",
+      title: "Are you sure delete this User?",
       icon: <ExclamationCircleOutlined />,
       content: "It will make changes in your data",
       okText: "Yes",
