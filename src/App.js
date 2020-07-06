@@ -2,12 +2,11 @@
  * App Component for the routes
  */
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
-import Profile from "./components/Profile";
-import Dashboard from "./components/Dashboard";
+import AppRoutes from "./AppRoutes";
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
 
 // App Component
 class App extends React.PureComponent {
@@ -16,7 +15,7 @@ class App extends React.PureComponent {
    */
   render() {
     return (
-      <Router>
+      <Router history={history}>
         {/* Links to Forward page to the specific route component */}
         <nav>
           <ul>
@@ -35,22 +34,7 @@ class App extends React.PureComponent {
           </ul>
         </nav>
 
-        {/*  Switch looks through its children Routes and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/signin">
-            <Signin />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
+        <AppRoutes />
       </Router>
     );
   }

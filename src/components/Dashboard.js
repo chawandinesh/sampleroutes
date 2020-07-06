@@ -2,13 +2,8 @@
  * Dashboard page
  */
 import React from "react";
-
 // Dashboard component
 function Dashboard() {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
-  );
+  return <h1>Dashboard page</h1>;
 }
 export default Dashboard;
