@@ -1,5 +1,10 @@
+/**
+ * Sign up
+ */
 import React from "react";
-
+/**
+ * @function Signup
+ */
 function Signup() {
   return (
     <div>

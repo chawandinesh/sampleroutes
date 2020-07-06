@@ -1,6 +1,12 @@
+/**
+ * User Form
+ */
 import React, { Component } from "react";
-import { Form, Input } from "antd";
+import { Form, Input, Button } from "antd";
 
+/**
+ * @class @name UserForm
+ */
 class UserForm extends Component {
   render() {
     return (
@@ -16,6 +22,11 @@ class UserForm extends Component {
         </Form.Item>
         <Form.Item label="Address" name="address">
           <Input.TextArea />
+        </Form.Item>
+        <Form.Item {...this.props.buttonLayout}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
         </Form.Item>
       </React.Fragment>
     );

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Form, Button, Modal } from "antd";
 import UserForm from "./UserForm";
 
+/**
+ * @class @name EditUser
+ * Component to update existing user data
+ */
 class EditUser extends Component {
   render() {
     return (
@@ -19,11 +23,6 @@ class EditUser extends Component {
             ref={this.props.editFormRef}
           >
             <UserForm />
-            <Form.Item {...this.props.buttonLayout}>
-              <Button type="primary" htmlType="submit">
-                Submit
-              </Button>
-            </Form.Item>
           </Form>
         </Modal>
       </div>

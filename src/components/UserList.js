@@ -4,11 +4,14 @@
 import React from "react";
 import { Col, Row, Button } from "antd";
 
-// UserList component
+/**
+ * @class @name UserList
+ * display the Users list
+ */
 class UserList extends React.Component {
   render() {
     return (
-      <div style={{ background: "#999", color: "white" }}>
+      <div className="userList">
         {this.props.formData.map((eachData, idx) => (
           <Row justify="center" key={idx}>
             <Col span={4}>{eachData.name}</Col>

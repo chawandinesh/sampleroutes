@@ -5,9 +5,9 @@ import React, { PureComponent } from "react";
 import { Form, Button, Modal } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import EditUser from "./EditUser";
-import { withRouter } from "react-router-dom";
 import EditList from "./UserList";
-import TaskForm from "./UserForm";
+import UserForm from "./UserForm";
+
 const { confirm } = Modal;
 
 /**
@@ -31,7 +31,7 @@ class Signin extends PureComponent {
    */
   layout = {
     labelCol: { span: 2 },
-    wrapperCol: { span: 6 },
+    wrapperCol: { span: 8 },
   };
   buttonLayout = {
     labelCol: { span: 2 },
@@ -131,12 +131,7 @@ class Signin extends PureComponent {
         onFinish={this.onFinish}
         ref={this.formRef}
       >
-        <TaskForm />
-        <Form.Item {...this.buttonLayout}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
+        <UserForm buttonLayout={this.buttonLayout} />
 
         <EditUser
           visible={this.state.visible}
@@ -158,4 +153,4 @@ class Signin extends PureComponent {
   }
 }
 
-export default withRouter(Signin);
+export default Signin;
