@@ -14,7 +14,7 @@ class EditUserModal extends Component {
     return (
       <div>
         <Modal
-          title="Basic Modal"
+          title="Edit User"
           visible={this.props.visible}
           onOk={this.props.handleOk}
           onCancel={this.props.handleCancel}
