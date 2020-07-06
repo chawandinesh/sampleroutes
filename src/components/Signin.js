@@ -2,11 +2,11 @@
  * Sign in page
  */
 import React, { PureComponent } from "react";
-import { Form, Button, Modal } from "antd";
+import { Form, Modal } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
-import EditUser from "./EditUser";
-import EditList from "./UserList";
+import EditUserModal from "./EditUserModal";
 import UserForm from "./UserForm";
+import UserTable from "./UserTable";
 
 const { confirm } = Modal;
 
@@ -30,12 +30,12 @@ class Signin extends PureComponent {
    * layout for the form
    */
   layout = {
-    labelCol: { span: 2 },
+    labelCol: { span: 4 },
     wrapperCol: { span: 8 },
   };
   buttonLayout = {
     labelCol: { span: 2 },
-    wrapperCol: { offset: 2 },
+    wrapperCol: { offset: 4 },
   };
 
   /**
@@ -78,7 +78,7 @@ class Signin extends PureComponent {
     confirm({
       title: "Are you sure delete this task?",
       icon: <ExclamationCircleOutlined />,
-      content: "Some descriptions",
+      content: "It will make changes in your data",
       okText: "Yes",
       okType: "danger",
       cancelText: "No",
@@ -111,7 +111,6 @@ class Signin extends PureComponent {
    * to update existing list with new values
    */
   onEditFinish = (values) => {
-    console.log(values, this.state.editIndexValue);
     this.state.data.splice(this.state.editIndexValue, 1, values);
     this.setState({
       data: [...this.state.data],
@@ -133,7 +132,7 @@ class Signin extends PureComponent {
       >
         <UserForm buttonLayout={this.buttonLayout} />
 
-        <EditUser
+        <EditUserModal
           visible={this.state.visible}
           handleOk={this.handleOk}
           handleCancel={this.handleModalCancel}
@@ -142,11 +141,10 @@ class Signin extends PureComponent {
           editFormRef={this.editFormRef}
           buttonLayout={this.buttonLayout}
         />
-
-        <EditList
-          formData={this.state.data}
-          handleDelete={this.handleDelete}
+        <UserTable
+          data={this.state.data}
           handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
         />
       </Form>
     );

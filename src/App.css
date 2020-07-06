@@ -37,6 +37,20 @@
   }
 }
 .userList {
-  background: #999999;
-  color: white;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
 }
+
+.rowData {
+  padding-left: 50px;
+}
+
+/* .ant-form-item-control {
+  padding-left: 30px;
+} */
+
+/* .ant-input {
+  width: 300px;
+} */

@@ -1,12 +1,15 @@
+/**
+ * Edit User
+ */
 import React, { Component } from "react";
-import { Form, Button, Modal } from "antd";
+import { Form, Modal } from "antd";
 import UserForm from "./UserForm";
 
 /**
- * @class @name EditUser
+ * @class @name EditUserModal
  * Component to update existing user data
  */
-class EditUser extends Component {
+class EditUserModal extends Component {
   render() {
     return (
       <div>
@@ -30,4 +33,4 @@ class EditUser extends Component {
   }
 }
 
-export default EditUser;
+export default EditUserModal;

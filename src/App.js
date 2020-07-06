@@ -5,8 +5,6 @@ import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
 import AppRoutes from "./AppRoutes";
-import { createBrowserHistory } from "history";
-const history = createBrowserHistory();
 
 // App Component
 class App extends React.PureComponent {
@@ -15,7 +13,7 @@ class App extends React.PureComponent {
    */
   render() {
     return (
-      <Router history={history}>
+      <Router>
         {/* Links to Forward page to the specific route component */}
         <nav>
           <ul>
