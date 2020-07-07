@@ -2,7 +2,7 @@
  * Sign in page
  */
 import React, { PureComponent } from "react";
-import { Form } from "antd";
+import { Form, message } from "antd";
 import UserForm from "./UserForm";
 
 /**
@@ -41,6 +41,7 @@ class Signin extends PureComponent {
     });
     this.formRef.current.resetFields();
     this.props.AtnAddUser(values);
+    message.success("Successfully Added");
   };
 
   /**

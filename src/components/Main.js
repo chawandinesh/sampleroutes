@@ -11,6 +11,7 @@ import {
   UserAddOutlined,
   SelectOutlined,
   DashboardOutlined,
+  TeamOutlined,
 } from "@ant-design/icons";
 import "../App.css";
 import AppRoutes from "../AppRoutes";
@@ -58,7 +59,7 @@ class Main extends React.PureComponent {
               <Menu.Item key="4" icon={<UserOutlined />}>
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
-              <Menu.Item key="5" icon={<UserOutlined />}>
+              <Menu.Item key="5" icon={<TeamOutlined />}>
                 <Link to="/users">Users</Link>
               </Menu.Item>
             </Menu>

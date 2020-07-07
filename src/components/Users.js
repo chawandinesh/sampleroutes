@@ -2,7 +2,7 @@
  * Displays the Available Users Data
  */
 import React, { Component } from "react";
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import UserTable from "./UserTable";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import EditUserModal from "./EditUserModal";
@@ -64,6 +64,7 @@ class Users extends Component {
     this.setState({
       visible: false,
     });
+    message.success("Successfully Updated");
   };
 
   /**
@@ -80,9 +81,11 @@ class Users extends Component {
       cancelText: "No",
       onOk: () => {
         this.props.AtnDeleteUser(indexValue);
+        message.success("Deleted successfully");
       },
       onCancel() {
         console.log("Cancel");
+        message.error("Canceled");
       },
     });
   };

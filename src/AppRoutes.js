@@ -22,11 +22,7 @@ class AppRoutes extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/signin">
-            <Signin
-              AtnAddUser={this.props.AtnAddUser}
-              AtnEditUser={this.props.AtnEditUser}
-              AtnDeleteUser={this.props.AtnDeleteUser}
-            />
+            <Signin AtnAddUser={this.props.AtnAddUser} />
           </Route>
           <Route path="/signup">
             <Signup />
