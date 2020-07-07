@@ -32,6 +32,9 @@ class AppRoutes extends Component {
           <Route path="/profile">
             <Profile />
           </Route>
+          <Route exact path="/">
+            <h1>Welcome</h1>
+          </Route>
         </Switch>
       </Fragment>
     );

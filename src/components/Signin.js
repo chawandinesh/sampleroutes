@@ -23,6 +23,7 @@ class Signin extends PureComponent {
       data: [],
       visible: false,
       editIndexValue: undefined,
+      collapsed: false,
     };
   }
 
@@ -131,7 +132,9 @@ class Signin extends PureComponent {
           onFinish={this.onFinish}
           ref={this.formRef}
         >
-          <UserForm buttonLayout={this.buttonLayout} />
+          <div className="userForm">
+            <UserForm buttonLayout={this.buttonLayout} />
+          </div>
         </Form>
         <EditUserModal
           visible={this.state.visible}

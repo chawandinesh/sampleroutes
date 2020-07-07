@@ -1,6 +1,12 @@
+/**
+ * User table to show the user data
+ */
 import React, { Component } from "react";
 import { Table, Row, Col, Button } from "antd";
 
+/**
+ * @class @name UserTable
+ */
 class UserTable extends Component {
   columns = [
     {
@@ -39,7 +45,6 @@ class UserTable extends Component {
               Edit
             </Button>{" "}
           </Col>
-          {/* &nbsp; */}
           <Col span={8}>
             <Button
               danger
@@ -54,6 +59,11 @@ class UserTable extends Component {
       ),
     },
   ];
+
+  /**
+   * @render
+   * display the user data into tables
+   */
   render() {
     return (
       <Table

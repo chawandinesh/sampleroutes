@@ -10,6 +10,10 @@ import UserForm from "./UserForm";
  * Component to update existing user data
  */
 class EditUserModal extends Component {
+  /**
+   * @render
+   * shows modal for update existing data
+   */
   render() {
     return (
       <div>
@@ -25,7 +29,9 @@ class EditUserModal extends Component {
             onFinish={this.props.onEditFinish}
             ref={this.props.editFormRef}
           >
-            <UserForm />
+            <div className="editUserForm">
+              <UserForm />
+            </div>
           </Form>
         </Modal>
       </div>

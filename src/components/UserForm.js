@@ -6,8 +6,12 @@ import { Form, Input, Button } from "antd";
 
 /**
  * @class @name UserForm
+ * form to register the new user and update the user
  */
 class UserForm extends Component {
+  /**
+   * @render returns form ui on to the screen
+   */
   render() {
     return (
       <React.Fragment>
