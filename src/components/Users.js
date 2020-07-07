@@ -44,11 +44,16 @@ class Users extends Component {
     }, 1000);
   };
 
+  /**
+   * @method @name handleDelete
+   * to close the modal
+   */
   handleModalCancel = () => {
     this.setState({
       visible: false,
     });
   };
+
   /**
    * @method @name onEditFinish
    * updates the data into users record
