@@ -124,14 +124,15 @@ class Signin extends PureComponent {
    */
   render() {
     return (
-      <Form
-        {...this.layout}
-        name="Form"
-        onFinish={this.onFinish}
-        ref={this.formRef}
-      >
-        <UserForm buttonLayout={this.buttonLayout} />
-
+      <div>
+        <Form
+          {...this.layout}
+          name="Form"
+          onFinish={this.onFinish}
+          ref={this.formRef}
+        >
+          <UserForm buttonLayout={this.buttonLayout} />
+        </Form>
         <EditUserModal
           visible={this.state.visible}
           handleOk={this.handleOk}
@@ -146,7 +147,7 @@ class Signin extends PureComponent {
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}
         />
-      </Form>
+      </div>
     );
   }
 }
