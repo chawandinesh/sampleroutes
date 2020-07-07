@@ -28,7 +28,7 @@ class Users extends Component {
    * Show modal and fill existing details into form
    * to update the specific user data
    */
-  handleEditButton = (idx, value) => {
+  handleEdit = (idx, value) => {
     this.setState({
       visible: true,
       index: idx,
@@ -44,13 +44,18 @@ class Users extends Component {
     }, 1000);
   };
 
+  handleModalCancel = () => {
+    this.setState({
+      visible: false,
+    });
+  };
   /**
    * @method @name onEditFinish
    * updates the data into users record
    * close the modal after updation
    */
   onEditFinish = (values) => {
-    this.props.AtnEdit(this.state.index, values);
+    this.props.AtnEditUser(this.state.index, values);
     this.setState({
       visible: false,
     });
@@ -60,7 +65,7 @@ class Users extends Component {
    * @method @name handleDeleteButton
    * delete specific user data from the records
    */
-  handleDeleteButton = (indexValue) => {
+  handleDelete = (indexValue) => {
     confirm({
       title: "Are you sure delete this User?",
       icon: <ExclamationCircleOutlined />,
@@ -69,7 +74,7 @@ class Users extends Component {
       okType: "danger",
       cancelText: "No",
       onOk: () => {
-        this.props.AtnDelete(indexValue);
+        this.props.AtnDeleteUser(indexValue);
       },
       onCancel() {
         console.log("Cancel");
@@ -84,14 +89,14 @@ class Users extends Component {
     return (
       <div>
         <UserTable
-          handleEditButton={this.handleEditButton}
-          handleDeleteButton={this.handleDeleteButton}
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
           data={this.props.users}
         />
         <EditUserModal
           visible={this.state.visible}
           handleOk={this.handleOk}
-          handleCancel={this.handleModalCancel}
+          handleEditCancel={this.handleModalCancel}
           layout={this.layout}
           onEditFinish={this.onEditFinish}
           editFormRef={this.editFormRef}

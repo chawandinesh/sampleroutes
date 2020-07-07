@@ -3,7 +3,11 @@
  */
 import { connect } from "react-redux";
 import Main from "./Main";
-import { AtnAdd, AtnDelete, AtnEdit } from "../redux/actions/appActions";
+import {
+  AtnAddUser,
+  AtnDeleteUser,
+  AtnEditUser,
+} from "../redux/actions/userActions";
 
 /**
  * mapStateToProps to send store to the component
@@ -21,9 +25,9 @@ const mapStateToProps = (store) => {
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    AtnAdd: (e) => dispatch(AtnAdd(e)),
-    AtnDelete: (idx) => dispatch(AtnDelete(idx)),
-    AtnEdit: (idx, value) => dispatch(AtnEdit(idx, value)),
+    AtnAddUser: (e) => dispatch(AtnAddUser(e)),
+    AtnDeleteUser: (idx) => dispatch(AtnDeleteUser(idx)),
+    AtnEditUser: (idx, value) => dispatch(AtnEditUser(idx, value)),
   };
 };
 

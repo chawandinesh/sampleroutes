@@ -82,10 +82,10 @@ class Main extends React.PureComponent {
               }}
             >
               <AppRoutes
-                AtnAdd={this.props.AtnAdd}
+                AtnAddUser={this.props.AtnAddUser}
                 users={this.props.state}
-                AtnDelete={this.props.AtnDelete}
-                AtnEdit={this.props.AtnEdit}
+                AtnDeleteUser={this.props.AtnDeleteUser}
+                AtnEditUser={this.props.AtnEditUser}
               />
             </Content>
           </Layout>

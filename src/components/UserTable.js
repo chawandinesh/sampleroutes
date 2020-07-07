@@ -40,10 +40,7 @@ class UserTable extends Component {
             <Button
               type="primary"
               onClick={() =>
-                this.props.handleEditButton(
-                  this.props.data.indexOf(record),
-                  record
-                )
+                this.props.handleEdit(this.props.data.indexOf(record), record)
               }
             >
               Edit
@@ -53,7 +50,7 @@ class UserTable extends Component {
             <Button
               danger
               onClick={() =>
-                this.props.handleDeleteButton(this.props.data.indexOf(record))
+                this.props.handleDelete(this.props.data.indexOf(record))
               }
             >
               Delete

@@ -21,7 +21,7 @@ class EditUserModal extends Component {
           title="Edit User"
           visible={this.props.visible}
           onOk={this.props.handleOk}
-          onCancel={this.props.handleCancel}
+          onCancel={this.props.handleEditCancel}
         >
           <Form
             {...this.props.layout}

@@ -40,7 +40,7 @@ class Signin extends PureComponent {
       data: [...this.state.data, values],
     });
     this.formRef.current.resetFields();
-    this.props.AtnAdd(values);
+    this.props.AtnAddUser(values);
   };
 
   /**

@@ -23,9 +23,9 @@ class AppRoutes extends Component {
         <Switch>
           <Route path="/signin">
             <Signin
-              AtnAdd={this.props.AtnAdd}
-              AtnEdit={this.props.AtnEdit}
-              AtnDelete={this.props.AtnDelete}
+              AtnAddUser={this.props.AtnAddUser}
+              AtnEditUser={this.props.AtnEditUser}
+              AtnDeleteUser={this.props.AtnDeleteUser}
             />
           </Route>
           <Route path="/signup">
@@ -40,8 +40,8 @@ class AppRoutes extends Component {
           <Route path="/users">
             <Users
               users={this.props.users}
-              AtnEdit={this.props.AtnEdit}
-              AtnDelete={this.props.AtnDelete}
+              AtnEditUser={this.props.AtnEditUser}
+              AtnDeleteUser={this.props.AtnDeleteUser}
             />
           </Route>
           <Route exact path="/">

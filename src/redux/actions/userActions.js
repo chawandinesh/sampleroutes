@@ -5,23 +5,23 @@ import {
   REGISTER_USER,
   DELETE_USER,
   UPDATE_USER,
-} from "../actionTypes/actionTypes";
+} from "../actionTypes/userActionTypes";
 
-export const AtnAdd = (e) => {
+export const AtnAddUser = (e) => {
   return {
     type: REGISTER_USER,
     payload: e,
   };
 };
 
-export const AtnDelete = (index) => {
+export const AtnDeleteUser = (index) => {
   return {
     type: DELETE_USER,
     index,
   };
 };
 
-export const AtnEdit = (index, value) => {
+export const AtnEditUser = (index, value) => {
   return {
     type: UPDATE_USER,
     index,
@@ -29,4 +29,4 @@ export const AtnEdit = (index, value) => {
   };
 };
 
-export default { AtnAdd, AtnDelete, AtnEdit };
+export default { AtnAddUser, AtnDeleteUser, AtnEditUser };

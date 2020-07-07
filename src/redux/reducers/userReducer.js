@@ -5,7 +5,7 @@ import {
   REGISTER_USER,
   DELETE_USER,
   UPDATE_USER,
-} from "../actionTypes/actionTypes";
+} from "../actionTypes/userActionTypes";
 
 const initialState = [];
 
