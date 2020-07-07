@@ -7,7 +7,14 @@ import {
   UPDATE_USER,
 } from "../actionTypes/userActionTypes";
 
-const initialState = [];
+const initialState = [
+  {
+    name: "Dinesh",
+    mobile: "8466088698",
+    email: "chavan.dinesh@ahex.co.in",
+    address: "Hyderabad",
+  },
+];
 
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {

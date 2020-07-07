@@ -4,6 +4,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
+import Logo from "../assets/ahex-logo.png";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -45,7 +46,7 @@ class Main extends React.PureComponent {
       <Router>
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <div className="logo" />
+            <img src={Logo} className="logo" />
             <Menu theme="dark" mode="inline">
               <Menu.Item key="1" icon={<SelectOutlined />}>
                 <Link to="/signin">Signin</Link>

@@ -80,3 +80,12 @@
 .editUserForm .ant-btn-primary {
   margin-left: 80px;
 }
+
+.logo {
+  height: 50px;
+  padding-left: 20px;
+}
+
+.ant-menu-inline {
+  padding-top: 30px;
+}
