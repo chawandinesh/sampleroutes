@@ -1,85 +1,15 @@
-/**
- * App Component for the routes
- */
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { Layout, Menu } from "antd";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  UserAddOutlined,
-  SelectOutlined,
-  DashboardOutlined,
-} from "@ant-design/icons";
 import "./App.css";
-import AppRoutes from "./AppRoutes";
+import Form from "./components";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
-const { Header, Sider, Content } = Layout;
-
-// App Component
-class App extends React.PureComponent {
-  state = {
-    collapsed: false,
-  };
-
-  /**
-   * @method @name toggle
-   * to enable and disable the sider menu
-   */
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
-
-  /**
-   * @render to display  component on the ui
-   */
+class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Layout>
-          <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <div className="logo" />
-            <Menu theme="dark" mode="inline">
-              <Menu.Item key="1" icon={<SelectOutlined />}>
-                <Link to="/signin">Signin</Link>
-              </Menu.Item>
-              <Menu.Item key="2" icon={<UserAddOutlined />}>
-                <Link to="/signup">Signup</Link>
-              </Menu.Item>
-              <Menu.Item key="3" icon={<DashboardOutlined />}>
-                <Link to="/dashboard">Dashboard</Link>
-              </Menu.Item>
-              <Menu.Item key="4" icon={<UserOutlined />}>
-                <Link to="/profile">Profile</Link>
-              </Menu.Item>
-            </Menu>
-          </Sider>
-          <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }}>
-              {React.createElement(
-                this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                {
-                  className: "trigger",
-                  onClick: this.toggle,
-                }
-              )}
-            </Header>
-            <Content
-              className="site-layout-background"
-              style={{
-                margin: "24px 16px",
-                padding: 24,
-                minHeight: 280,
-              }}
-            >
-              <AppRoutes />
-            </Content>
-          </Layout>
-        </Layout>
-      </Router>
+      <Provider store={store}>
+        <Form />
+      </Provider>
     );
   }
 }

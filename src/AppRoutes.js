@@ -7,6 +7,7 @@ import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
+import Users from "./components/Users";
 
 /**
  * contains all the required routes  for the application
@@ -21,7 +22,11 @@ class AppRoutes extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/signin">
-            <Signin />
+            <Signin
+              AtnAdd={this.props.AtnAdd}
+              AtnEdit={this.props.AtnEdit}
+              AtnDelete={this.props.AtnDelete}
+            />
           </Route>
           <Route path="/signup">
             <Signup />
@@ -31,6 +36,13 @@ class AppRoutes extends Component {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/users">
+            <Users
+              users={this.props.users}
+              AtnEdit={this.props.AtnEdit}
+              AtnDelete={this.props.AtnDelete}
+            />
           </Route>
           <Route exact path="/">
             <h1>Welcome</h1>

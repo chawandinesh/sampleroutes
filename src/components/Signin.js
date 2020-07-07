@@ -2,13 +2,8 @@
  * Sign in page
  */
 import React, { PureComponent } from "react";
-import { Form, Modal } from "antd";
-import { ExclamationCircleOutlined } from "@ant-design/icons";
-import EditUserModal from "./EditUserModal";
+import { Form } from "antd";
 import UserForm from "./UserForm";
-import UserTable from "./UserTable";
-
-const { confirm } = Modal;
 
 /**
  * @class
@@ -18,12 +13,8 @@ class Signin extends PureComponent {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.editFormRef = React.createRef();
     this.state = {
       data: [],
-      visible: false,
-      editIndexValue: undefined,
-      collapsed: false,
     };
   }
 
@@ -40,62 +31,6 @@ class Signin extends PureComponent {
   };
 
   /**
-   * @method
-   * @name handleModalCancel
-   * to disable the modal after clicking cancel
-   */
-  handleModalCancel = () => {
-    this.setState({
-      visible: false,
-    });
-  };
-
-  /**
-   * @method
-   * @name handleEdit
-   * to update the existing User
-   */
-  handleEdit = (indexValue) => {
-    this.setState({
-      visible: true,
-      editIndexValue: indexValue,
-    });
-    const dataValues = this.state.data[indexValue];
-    setTimeout(() => {
-      this.editFormRef.current.setFieldsValue({
-        name: dataValues.name,
-        email: dataValues.email,
-        mobile: dataValues.mobile,
-        address: dataValues.address,
-      });
-    }, 1000);
-  };
-
-  /**
-   * @method @name handleDelete
-   * to delete the specific User
-   */
-  handleDelete = (indexValue) => {
-    confirm({
-      title: "Are you sure delete this User?",
-      icon: <ExclamationCircleOutlined />,
-      content: "It will make changes in your data",
-      okText: "Yes",
-      okType: "danger",
-      cancelText: "No",
-      onOk: () => {
-        this.state.data.splice(indexValue, 1);
-        this.setState({
-          data: [...this.state.data],
-        });
-      },
-      onCancel() {
-        console.log("Cancel");
-      },
-    });
-  };
-
-  /**
    * @method onFinish
    * to create new list with submitted data in User Record
    *
@@ -105,23 +40,12 @@ class Signin extends PureComponent {
       data: [...this.state.data, values],
     });
     this.formRef.current.resetFields();
+    this.props.AtnAdd(values);
   };
 
   /**
-   * @method onEditFinish
-   * to update existing list with new values
-   */
-  onEditFinish = (values) => {
-    this.state.data.splice(this.state.editIndexValue, 1, values);
-    this.setState({
-      data: [...this.state.data],
-      visible: false,
-    });
-    this.editFormRef.current.resetFields();
-  };
-
-  /**
-   * @render to display the signin component screen
+   * @render
+   * returns the form to add new user into records
    */
   render() {
     return (
@@ -136,20 +60,6 @@ class Signin extends PureComponent {
             <UserForm buttonLayout={this.buttonLayout} />
           </div>
         </Form>
-        <EditUserModal
-          visible={this.state.visible}
-          handleOk={this.handleOk}
-          handleCancel={this.handleModalCancel}
-          layout={this.layout}
-          onEditFinish={this.onEditFinish}
-          editFormRef={this.editFormRef}
-          buttonLayout={this.buttonLayout}
-        />
-        <UserTable
-          data={this.state.data}
-          handleEdit={this.handleEdit}
-          handleDelete={this.handleDelete}
-        />
       </div>
     );
   }

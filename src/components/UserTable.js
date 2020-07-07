@@ -6,6 +6,7 @@ import { Table, Row, Col, Button } from "antd";
 
 /**
  * @class @name UserTable
+ * creates table to show the user details
  */
 class UserTable extends Component {
   columns = [
@@ -39,7 +40,10 @@ class UserTable extends Component {
             <Button
               type="primary"
               onClick={() =>
-                this.props.handleEdit(this.props.data.indexOf(record))
+                this.props.handleEditButton(
+                  this.props.data.indexOf(record),
+                  record
+                )
               }
             >
               Edit
@@ -49,7 +53,7 @@ class UserTable extends Component {
             <Button
               danger
               onClick={() =>
-                this.props.handleDelete(this.props.data.indexOf(record))
+                this.props.handleDeleteButton(this.props.data.indexOf(record))
               }
             >
               Delete
