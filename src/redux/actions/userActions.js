@@ -5,10 +5,10 @@ import {
   REGISTER_USER,
   DELETE_USER,
   UPDATE_USER,
+  LOGIN_SUCCESS,
 } from "../actionTypes/userActionTypes";
 import { store } from "../store";
-
-const state = store.getState();
+const users = store.getState().users;
 export const AtnAddUser = (user) => {
   return {
     type: REGISTER_USER,
@@ -17,18 +17,24 @@ export const AtnAddUser = (user) => {
 };
 
 export const AtnDeleteUser = (index) => {
-  state.splice(index, 1);
   return {
     type: DELETE_USER,
-    value: state,
+    users,
+    index,
   };
 };
 
 export const AtnEditUser = (index, value) => {
-  state.splice(index, 1, value);
   return {
     type: UPDATE_USER,
-    value: state,
+    index,
+    value,
+  };
+};
+
+export const AtnLogin = () => {
+  return {
+    type: LOGIN_SUCCESS,
   };
 };
 

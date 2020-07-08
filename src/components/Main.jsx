@@ -4,7 +4,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
-import Logo from "../assets/ahex-logo.png";
+import Logo from "../assets/logo/ahex-logo.png";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -46,10 +46,10 @@ class Main extends React.PureComponent {
       <Router>
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <img src={Logo} className="logo" />
-            <Menu theme="dark" mode="inline">
+            <img src={Logo} className="logo" alt="ahex-logo" />
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1" icon={<SelectOutlined />}>
-                <Link to="/signin">Signin</Link>
+                <Link to="/register">Registration</Link>
               </Menu.Item>
               <Menu.Item key="2" icon={<UserAddOutlined />}>
                 <Link to="/signup">Signup</Link>
@@ -88,6 +88,7 @@ class Main extends React.PureComponent {
                 users={this.props.state}
                 AtnDeleteUser={this.props.AtnDeleteUser}
                 AtnEditUser={this.props.AtnEditUser}
+                AtnLogin={this.props.AtnLogin}
               />
             </Content>
           </Layout>

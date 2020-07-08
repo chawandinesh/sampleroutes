@@ -7,6 +7,7 @@ import {
   AtnAddUser,
   AtnDeleteUser,
   AtnEditUser,
+  AtnLogin,
 } from "../redux/actions/userActions";
 
 /**
@@ -15,7 +16,7 @@ import {
  */
 const mapStateToProps = (store) => {
   return {
-    state: store,
+    state: store.users,
   };
 };
 
@@ -28,6 +29,7 @@ const mapDispatchToProps = (dispatch) => {
     AtnAddUser: (e) => dispatch(AtnAddUser(e)),
     AtnDeleteUser: (idx) => dispatch(AtnDeleteUser(idx)),
     AtnEditUser: (idx, value) => dispatch(AtnEditUser(idx, value)),
+    AtnLogin: () => dispatch(AtnLogin()),
   };
 };
 

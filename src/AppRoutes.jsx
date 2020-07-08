@@ -3,11 +3,12 @@
  */
 import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
-import Profile from "./components/Profile";
-import Dashboard from "./components/Dashboard";
-import Users from "./components/Users";
+import UserRegistration from "./components/Users/UserRegistration";
+import Signup from "./components/Login/Signup";
+import Profile from "./components/Profile/Profile";
+import Dashboard from "./components/Dashboard/Dashboard";
+import UserDisplay from "./components/Users/UserDisplay";
+import Login from "./components/Login/Login";
 
 /**
  * contains all the required routes  for the application
@@ -21,8 +22,8 @@ class AppRoutes extends Component {
         {/*  Switch looks through its children Routes and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/signin">
-            <Signin AtnAddUser={this.props.AtnAddUser} />
+          <Route path="/register">
+            <UserRegistration AtnAddUser={this.props.AtnAddUser} />
           </Route>
           <Route path="/signup">
             <Signup />
@@ -34,14 +35,14 @@ class AppRoutes extends Component {
             <Profile />
           </Route>
           <Route path="/users">
-            <Users
+            <UserDisplay
               users={this.props.users}
               AtnEditUser={this.props.AtnEditUser}
               AtnDeleteUser={this.props.AtnDeleteUser}
             />
           </Route>
           <Route exact path="/">
-            <h1>Welcome</h1>
+            <Login AtnLogin={this.props.AtnLogin} />
           </Route>
         </Switch>
       </Fragment>

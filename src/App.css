@@ -73,14 +73,6 @@
   height: 100vh;
 }
 
-.userForm {
-  margin-left: -130px;
-}
-
-.editUserForm .ant-btn-primary {
-  margin-left: 80px;
-}
-
 .logo {
   height: 50px;
   padding-left: 20px;
@@ -88,4 +80,71 @@
 
 .ant-menu-inline {
   padding-top: 30px;
+}
+
+.forgotPassword {
+  margin-left: 300px;
+}
+
+.ForgotPasswordLogin {
+  margin-left: -40px;
+}
+
+#basic_username {
+  border: none;
+  border-bottom: 1px solid;
+  box-shadow: none;
+}
+
+#basic_password {
+  border: none;
+  border-bottom: 1px solid;
+  box-shadow: none;
+  padding-left: 10px;
+}
+.ant-input-password {
+  border-color: white;
+  box-shadow: none;
+}
+.ant-input-password:hover {
+  border-color: white;
+  box-shadow: none;
+}
+
+.username {
+  justify-content: center;
+}
+
+.ant-form-item-has-error .ant-input-affix-wrapper {
+  border-color: white;
+}
+.ant-form-item-has-error .ant-input-affix-wrapper:hover {
+  border-color: white;
+}
+.ant-form-item-has-error .ant-input-affix-wrapper:focus {
+  box-shadow: none;
+  border-color: white;
+}
+
+.fade {
+  background: white;
+}
+
+.modal.show .modal-dialog {
+  box-shadow: 0px 0px 20px black;
+}
+
+@media only screen and (min-width: 600px) {
+  .password {
+    justify-content: center;
+    margin-left: -53px;
+    width: 600px;
+  }
+  .userForm {
+    margin-left: -130px;
+  }
+
+  .editUserForm .ant-btn-primary {
+    margin-left: 80px;
+  }
 }

@@ -7,9 +7,9 @@ import UserForm from "./UserForm";
 
 /**
  * @class
- * @name Signin screen
+ * @name UserRegistration screen
  */
-class Signin extends PureComponent {
+class UserRegistration extends PureComponent {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
@@ -66,4 +66,4 @@ class Signin extends PureComponent {
   }
 }
 
-export default Signin;
+export default UserRegistration;

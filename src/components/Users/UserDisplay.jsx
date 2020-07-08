@@ -13,7 +13,7 @@ const { confirm } = Modal;
  * @class @name Users
  * component to show the available user details
  */
-class Users extends Component {
+class UsersDisplay extends Component {
   constructor(props) {
     super(props);
     this.editFormRef = React.createRef();
@@ -115,4 +115,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default UsersDisplay;

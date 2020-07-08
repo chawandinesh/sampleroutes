@@ -5,25 +5,28 @@ import {
   REGISTER_USER,
   DELETE_USER,
   UPDATE_USER,
+  LOGIN_SUCCESS,
 } from "../actionTypes/userActionTypes";
+import tempData from "../../utils/tempData.json";
 
-const initialState = [
-  {
-    name: "Dinesh",
-    mobile: "8466088698",
-    email: "chavan.dinesh@ahex.co.in",
-    address: "Hyderabad",
-  },
-];
+const initialState = {
+  users: tempData,
+  isLoginSuccess: false,
+};
 
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER:
-      return [...state, action.user];
+      state.users.push(action.user);
+      return state;
     case DELETE_USER:
-      return [...action.value];
+      state.users.splice(action.index, 1);
+      return state;
     case UPDATE_USER:
-      return [...action.value];
+      state.users.splice(action.index, 1, action.value);
+      return state;
+    case LOGIN_SUCCESS:
+      return { ...state, isLoginSuccess: true };
     default:
       return state;
   }
