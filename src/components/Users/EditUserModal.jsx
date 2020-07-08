@@ -15,20 +15,28 @@ class EditUserModal extends Component {
    * shows modal for update existing data
    */
   render() {
+    const {
+      visible,
+      handleEditCancel,
+      handleOk,
+      layout,
+      onEditFinish,
+      editFormRef,
+    } = this.props;
     return (
       <div>
         <Modal
           title="Edit User"
-          visible={this.props.visible}
-          onOk={this.props.handleOk}
-          onCancel={this.props.handleEditCancel}
+          visible={visible}
+          onOk={handleOk}
+          onCancel={handleEditCancel}
           footer={null}
         >
           <Form
-            {...this.props.layout}
+            {...layout}
             name="Form"
-            onFinish={this.props.onEditFinish}
-            ref={this.props.editFormRef}
+            onFinish={onEditFinish}
+            ref={editFormRef}
           >
             <div className="editUserForm">
               <UserForm />

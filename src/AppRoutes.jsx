@@ -4,7 +4,6 @@
 import React, { Component, Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import UserRegistration from "./components/Users/UserRegistration";
-import { message } from "antd";
 import Signup from "./components/Login/Signup";
 import Profile from "./components/Profile/Profile";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -18,7 +17,14 @@ import Login from "./components/Login/Login";
  */
 class AppRoutes extends Component {
   render() {
-    const { isLoginSuccess } = this.props;
+    const {
+      isLoginSuccess,
+      users,
+      AtnAddUser,
+      AtnEditUser,
+      AtnDeleteUser,
+      AtnLogin,
+    } = this.props;
     return (
       <Fragment>
         {!isLoginSuccess && <Redirect to="/" />}
@@ -26,7 +32,7 @@ class AppRoutes extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/register">
-            <UserRegistration AtnAddUser={this.props.AtnAddUser} />
+            <UserRegistration AtnAddUser={AtnAddUser} />
           </Route>
           <Route path="/signup">
             <Signup />
@@ -39,13 +45,13 @@ class AppRoutes extends Component {
           </Route>
           <Route path="/users">
             <UserDisplay
-              users={this.props.users}
-              AtnEditUser={this.props.AtnEditUser}
-              AtnDeleteUser={this.props.AtnDeleteUser}
+              users={users}
+              AtnEditUser={AtnEditUser}
+              AtnDeleteUser={AtnDeleteUser}
             />
           </Route>
           <Route exact path="/">
-            <Login AtnLogin={this.props.AtnLogin} />
+            <Login AtnLogin={AtnLogin} />
           </Route>
         </Switch>
       </Fragment>
