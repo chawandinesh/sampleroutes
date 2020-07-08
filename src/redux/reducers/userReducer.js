@@ -19,13 +19,11 @@ const initialState = [
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER:
-      return [...state, action.payload];
+      return [...state, action.user];
     case DELETE_USER:
-      state.splice(action.index, 1);
-      return [...state];
+      return [...action.value];
     case UPDATE_USER:
-      state.splice(action.index, 1, action.value);
-      return [...state];
+      return [...action.value];
     default:
       return state;
   }

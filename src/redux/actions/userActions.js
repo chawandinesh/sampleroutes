@@ -6,26 +6,29 @@ import {
   DELETE_USER,
   UPDATE_USER,
 } from "../actionTypes/userActionTypes";
+import { store } from "../store";
 
-export const AtnAddUser = (e) => {
+const state = store.getState();
+export const AtnAddUser = (user) => {
   return {
     type: REGISTER_USER,
-    payload: e,
+    user,
   };
 };
 
 export const AtnDeleteUser = (index) => {
+  state.splice(index, 1);
   return {
     type: DELETE_USER,
-    index,
+    value: state,
   };
 };
 
 export const AtnEditUser = (index, value) => {
+  state.splice(index, 1, value);
   return {
     type: UPDATE_USER,
-    index,
-    value,
+    value: state,
   };
 };
 

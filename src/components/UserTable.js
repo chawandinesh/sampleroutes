@@ -2,7 +2,8 @@
  * User table to show the user data
  */
 import React, { Component } from "react";
-import { Table, Row, Col, Button } from "antd";
+import { Table, Row, Col } from "antd";
+import { EditFilled, DeleteFilled } from "@ant-design/icons";
 
 /**
  * @class @name UserTable
@@ -36,25 +37,22 @@ class UserTable extends Component {
       key: "x",
       render: (text, record) => (
         <Row>
-          <Col span={8}>
-            <Button
-              type="primary"
+          <Col span={10}>
+            <EditFilled
+              style={{ color: "#2A8EF7", fontSize: "20px" }}
               onClick={() =>
                 this.props.handleEdit(this.props.data.indexOf(record), record)
               }
-            >
-              Edit
-            </Button>{" "}
+            />
           </Col>
-          <Col span={8}>
-            <Button
-              danger
+          <Col span={10}>
+            <DeleteFilled
+              style={{ color: "red", fontSize: "20px" }}
+              danger="true"
               onClick={() =>
                 this.props.handleDelete(this.props.data.indexOf(record))
               }
-            >
-              Delete
-            </Button>
+            />
           </Col>
         </Row>
       ),
