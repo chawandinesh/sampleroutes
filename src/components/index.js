@@ -15,8 +15,10 @@ import {
  * @param  store
  */
 const mapStateToProps = (store) => {
+  const { isLoginSuccess } = store;
   return {
     state: store.users,
+    isLoginSuccess,
   };
 };
 

@@ -14,6 +14,9 @@ import Logo from "../../assets/logo/ahex-logo.png";
  * @classdesc Login form for the Application
  */
 class Login extends Component {
+  state = {
+    checked: false,
+  };
   layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 8 },
@@ -37,6 +40,12 @@ class Login extends Component {
     } else {
       alert("failed to login");
     }
+  };
+
+  checked = () => {
+    this.setState({
+      checked: true,
+    });
   };
 
   /**
@@ -75,7 +84,9 @@ class Login extends Component {
             </Form.Item>
 
             <Form.Item {...this.tailLayout} name="remember">
-              <Checkbox>Remember me</Checkbox>
+              <Checkbox checked={this.state.checked} onChange={this.checked}>
+                Remember me
+              </Checkbox>
             </Form.Item>
 
             <Form.Item {...this.tailLayout}>

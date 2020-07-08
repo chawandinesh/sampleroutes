@@ -2,8 +2,9 @@
  * App Routes
  */
 import React, { Component, Fragment } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import UserRegistration from "./components/Users/UserRegistration";
+import { message } from "antd";
 import Signup from "./components/Login/Signup";
 import Profile from "./components/Profile/Profile";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -17,8 +18,10 @@ import Login from "./components/Login/Login";
  */
 class AppRoutes extends Component {
   render() {
+    const { isLoginSuccess } = this.props;
     return (
       <Fragment>
+        {!isLoginSuccess && <Redirect to="/" />}
         {/*  Switch looks through its children Routes and
             renders the first one that matches the current URL. */}
         <Switch>

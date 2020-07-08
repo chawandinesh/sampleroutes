@@ -89,6 +89,7 @@ class Main extends React.PureComponent {
                 AtnDeleteUser={this.props.AtnDeleteUser}
                 AtnEditUser={this.props.AtnEditUser}
                 AtnLogin={this.props.AtnLogin}
+                isLoginSuccess={this.props.isLoginSuccess}
               />
             </Content>
           </Layout>
