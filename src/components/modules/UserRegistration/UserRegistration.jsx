@@ -69,7 +69,7 @@ class UserRegistration extends PureComponent {
     return (
       <div>
         <Modal
-          title="Edit User"
+          title="Add User"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
