@@ -7,11 +7,14 @@ import {
   UPDATE_USER,
   LOGIN_SUCCESS,
 } from "../actionTypes/userActionTypes";
-import tempData from "../../utils/tempData.json";
+import { EDIT_PROFILE } from "../actionTypes/profileActionTypes";
+import tempData from "../../assets/data/tempData.json";
+import profileData from "../../assets/data/profile.json";
 
 const initialState = {
   users: tempData,
   isLoginSuccess: false,
+  profile: profileData,
 };
 
 const AppReducer = (state = initialState, action) => {
@@ -24,6 +27,8 @@ const AppReducer = (state = initialState, action) => {
       return { ...state, users: action.users };
     case LOGIN_SUCCESS:
       return { ...state, isLoginSuccess: true };
+    case EDIT_PROFILE:
+      return { ...state, profile: action.data };
     default:
       return state;
   }

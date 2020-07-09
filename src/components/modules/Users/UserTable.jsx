@@ -3,6 +3,7 @@
  */
 import React, { Component } from "react";
 import { Table, Row, Col, Input, Button, Space } from "antd";
+import { withRouter } from "react-router-dom";
 import { EditFilled, DeleteFilled, SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
 
@@ -172,16 +173,29 @@ class UserTable extends Component {
    * display the user data into tables
    */
   render() {
+    console.log(this.props.data);
     return (
-      <Table
-        columns={this.columns}
-        scroll={{ x: 200 }}
-        dataSource={[...this.props.data]}
-        pagination={{ pageSize: 8 }}
-        rowKey={(record) => record.mobile}
-      />
+      <div>
+        <div className="add-user">
+          <Button
+            type="primary"
+            onClick={() => this.props.history.push("/register")}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Add User
+          </Button>
+        </div>
+        <Table
+          columns={this.columns}
+          scroll={{ x: 200 }}
+          dataSource={[...this.props.data]}
+          pagination={{ pageSize: 8 }}
+          rowKey={(record) => record.mobile}
+        />
+      </div>
     );
   }
 }
 
-export default UserTable;
+export default withRouter(UserTable);

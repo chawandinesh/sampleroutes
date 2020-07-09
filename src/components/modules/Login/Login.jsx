@@ -6,8 +6,8 @@ import { withRouter } from "react-router-dom";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import loginAuth from "../../assets/login/login.json";
-import Logo from "../../assets/logo/ahex-logo.png";
+import loginAuth from "../../../assets/data/login/login.json";
+import Logo from "../../../assets/images/ahex-logo.png";
 
 /**
  * @class @name Login
@@ -36,7 +36,7 @@ class Login extends Component {
       loginAuth.password === values.password
     ) {
       this.props.AtnLogin();
-      this.props.history.push("/register");
+      this.props.history.push("/dashboard");
     } else {
       alert("failed to login");
     }

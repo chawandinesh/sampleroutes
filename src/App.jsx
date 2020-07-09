@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
-import Form from "./components";
+import "./assets/css/styles.css";
+import Main from "./components/modules/Main";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <Form />
+        <Main />
       </Provider>
     );
   }

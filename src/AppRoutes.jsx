@@ -3,12 +3,11 @@
  */
 import React, { Component, Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import UserRegistration from "./components/Users/UserRegistration";
-import Signup from "./components/Login/Signup";
-import Profile from "./components/Profile/Profile";
-import Dashboard from "./components/Dashboard/Dashboard";
-import UserDisplay from "./components/Users/UserDisplay";
-import Login from "./components/Login/Login";
+import UserRegistration from "./components/modules/UserRegistration";
+import Profile from "./components/modules/Profile";
+import Dashboard from "./components/modules/Dashboard";
+import UserDisplay from "./components/modules/Users";
+import Login from "./components/modules/Login";
 
 /**
  * contains all the required routes  for the application
@@ -17,14 +16,7 @@ import Login from "./components/Login/Login";
  */
 class AppRoutes extends Component {
   render() {
-    const {
-      isLoginSuccess,
-      users,
-      AtnAddUser,
-      AtnEditUser,
-      AtnDeleteUser,
-      AtnLogin,
-    } = this.props;
+    const { isLoginSuccess } = this.props;
     return (
       <Fragment>
         {!isLoginSuccess && <Redirect to="/" />}
@@ -32,10 +24,7 @@ class AppRoutes extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/register">
-            <UserRegistration AtnAddUser={AtnAddUser} />
-          </Route>
-          <Route path="/signup">
-            <Signup />
+            <UserRegistration />
           </Route>
           <Route path="/dashboard">
             <Dashboard />
@@ -44,14 +33,10 @@ class AppRoutes extends Component {
             <Profile />
           </Route>
           <Route path="/users">
-            <UserDisplay
-              users={users}
-              AtnEditUser={AtnEditUser}
-              AtnDeleteUser={AtnDeleteUser}
-            />
+            <UserDisplay />
           </Route>
           <Route exact path="/">
-            <Login AtnLogin={AtnLogin} />
+            <Login />
           </Route>
         </Switch>
       </Fragment>

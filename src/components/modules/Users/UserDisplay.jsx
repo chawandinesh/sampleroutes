@@ -105,6 +105,7 @@ class UsersDisplay extends Component {
           handleDelete={this.handleDelete}
           data={this.props.users}
         />
+
         <EditUserModal
           visible={this.state.visible}
           handleOk={this.handleOk}
