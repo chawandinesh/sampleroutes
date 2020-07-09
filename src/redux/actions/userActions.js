@@ -9,6 +9,7 @@ import {
 } from "../actionTypes/userActionTypes";
 import { store } from "../store";
 const users = store.getState().users;
+
 export const AtnAddUser = (user) => {
   return {
     type: REGISTER_USER,
@@ -17,18 +18,18 @@ export const AtnAddUser = (user) => {
 };
 
 export const AtnDeleteUser = (index) => {
+  users.splice(index, 1);
   return {
     type: DELETE_USER,
     users,
-    index,
   };
 };
 
 export const AtnEditUser = (index, value) => {
+  users.splice(index, 1, value);
   return {
     type: UPDATE_USER,
-    index,
-    value,
+    users,
   };
 };
 

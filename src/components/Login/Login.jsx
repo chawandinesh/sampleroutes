@@ -15,7 +15,7 @@ import Logo from "../../assets/logo/ahex-logo.png";
  */
 class Login extends Component {
   state = {
-    checked: false,
+    checkedin: false,
   };
   layout = {
     labelCol: { span: 8 },
@@ -42,10 +42,14 @@ class Login extends Component {
     }
   };
 
-  checked = () => {
-    this.setState({
-      checked: true,
-    });
+  /**
+   * @method @name handleChecked
+   * changes the state of checkbox
+   */
+  handleChecked = () => {
+    this.setState((prevState) => ({
+      checkedin: !prevState.checkedin,
+    }));
   };
 
   /**
@@ -84,7 +88,10 @@ class Login extends Component {
             </Form.Item>
 
             <Form.Item {...this.tailLayout} name="remember">
-              <Checkbox checked={this.state.checked} onChange={this.checked}>
+              <Checkbox
+                checked={this.state.checkedin}
+                onChange={this.handleChecked}
+              >
                 Remember me
               </Checkbox>
             </Form.Item>

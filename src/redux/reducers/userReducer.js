@@ -17,14 +17,11 @@ const initialState = {
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER:
-      state.users.push(action.user);
-      return state;
+      return { ...state, users: [...state.users, action.user] };
     case DELETE_USER:
-      state.users.splice(action.index, 1);
-      return state;
+      return { ...state, users: action.users };
     case UPDATE_USER:
-      state.users.splice(action.index, 1, action.value);
-      return state;
+      return { ...state, users: action.users };
     case LOGIN_SUCCESS:
       return { ...state, isLoginSuccess: true };
     default:
