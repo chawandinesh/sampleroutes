@@ -173,7 +173,6 @@ class UserTable extends Component {
    * display the user data into tables
    */
   render() {
-    console.log(this.props.data);
     return (
       <div>
         <div className="add-user">
