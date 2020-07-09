@@ -111,10 +111,6 @@
   box-shadow: none;
 }
 
-.username {
-  justify-content: center;
-}
-
 .ant-form-item-has-error .ant-input-affix-wrapper {
   border-color: white;
 }
@@ -132,12 +128,24 @@
 
 .modal.show .modal-dialog {
   box-shadow: 0px 0px 20px black;
+  width: 370px;
+}
+.login-button {
+  width: 165px;
+  left: -20px;
+  background-color: #3797d5;
 }
 
 @media only screen and (min-width: 600px) {
+  .username {
+    justify-content: center;
+    width: 470px;
+    margin-left: -60px;
+  }
+
   .password {
     justify-content: center;
-    margin-left: -53px;
+    margin-left: -117px;
     width: 600px;
   }
   .userForm {

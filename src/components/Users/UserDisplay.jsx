@@ -3,8 +3,8 @@
  */
 import React, { Component } from "react";
 import { Modal, message } from "antd";
-import UserTable from "./UserTable";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
+import UserTable from "./UserTable";
 import EditUserModal from "./EditUserModal";
 
 const { confirm } = Modal;
@@ -19,6 +19,7 @@ class UsersDisplay extends Component {
     this.editFormRef = React.createRef();
     this.state = {
       visible: false,
+      isUserDeleted: false,
       index: undefined,
     };
   }
@@ -81,6 +82,9 @@ class UsersDisplay extends Component {
       cancelText: "No",
       onOk: () => {
         this.props.AtnDeleteUser(indexValue);
+        this.setState({
+          isUserDeleted: true,
+        });
         message.success("Deleted successfully");
       },
       onCancel() {

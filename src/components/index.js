@@ -12,12 +12,12 @@ import {
 
 /**
  * mapStateToProps to send store to the component
- * @param  store
+ * @param  state
  */
-const mapStateToProps = (store) => {
-  const { isLoginSuccess } = store;
+const mapStateToProps = (state) => {
+  const { isLoginSuccess, users } = state;
   return {
-    state: store.users,
+    users,
     isLoginSuccess,
   };
 };

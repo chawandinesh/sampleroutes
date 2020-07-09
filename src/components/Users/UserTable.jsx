@@ -3,9 +3,8 @@
  */
 import React, { Component } from "react";
 import { Table, Row, Col, Input, Button, Space } from "antd";
-import { EditFilled, DeleteFilled } from "@ant-design/icons";
+import { EditFilled, DeleteFilled, SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
-import { SearchOutlined } from "@ant-design/icons";
 
 /**
  * @class @name UserTable

@@ -90,7 +90,7 @@ class Login extends Component {
             </Form.Item>
 
             <Form.Item {...this.tailLayout}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" className="login-button">
                 Signin
               </Button>
             </Form.Item>

@@ -4,7 +4,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
-import Logo from "../assets/logo/ahex-logo.png";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -14,6 +13,7 @@ import {
   DashboardOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
+import Logo from "../assets/logo/ahex-logo.png";
 import "../App.css";
 import AppRoutes from "../AppRoutes";
 
@@ -42,6 +42,14 @@ class Main extends React.PureComponent {
    * @render to display  component on the ui
    */
   render() {
+    const {
+      AtnAddUser,
+      users,
+      AtnDeleteUser,
+      AtnEditUser,
+      AtnLogin,
+      isLoginSuccess,
+    } = this.props;
     return (
       <Router>
         <Layout>
@@ -84,12 +92,12 @@ class Main extends React.PureComponent {
               }}
             >
               <AppRoutes
-                AtnAddUser={this.props.AtnAddUser}
-                users={this.props.state}
-                AtnDeleteUser={this.props.AtnDeleteUser}
-                AtnEditUser={this.props.AtnEditUser}
-                AtnLogin={this.props.AtnLogin}
-                isLoginSuccess={this.props.isLoginSuccess}
+                AtnAddUser={AtnAddUser}
+                users={users}
+                AtnDeleteUser={AtnDeleteUser}
+                AtnEditUser={AtnEditUser}
+                AtnLogin={AtnLogin}
+                isLoginSuccess={isLoginSuccess}
               />
             </Content>
           </Layout>
