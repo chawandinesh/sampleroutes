@@ -19,6 +19,7 @@ class Profile extends Component {
    * renders the ui on profile page
    */
   render() {
+    const { profile, imageList, atnEditProfile, atnImageUpload } = this.props;
     return (
       <Tabs defaultActiveKey="1">
         <TabPane
@@ -30,20 +31,22 @@ class Profile extends Component {
           }
           key="1"
         >
-          <ViewProfile data={this.props.profile} />
+          <ViewProfile data={profile} imageList={imageList} />
         </TabPane>
         <TabPane
           tab={
             <span>
-              <EditFilled data={this.props.profile} />
+              <EditFilled data={profile} />
               edit
             </span>
           }
           key="2"
         >
           <EditProfile
-            data={this.props.profile}
-            atnEditProfile={this.props.atnEditProfile}
+            data={profile}
+            imageList={imageList}
+            atnEditProfile={atnEditProfile}
+            atnImageUpload={atnImageUpload}
           />
         </TabPane>
       </Tabs>

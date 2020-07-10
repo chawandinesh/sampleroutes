@@ -6,6 +6,7 @@ import { Table, Row, Col, Input, Button, Space } from "antd";
 import { withRouter } from "react-router-dom";
 import { EditFilled, DeleteFilled, SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
+import exportToPdf from "../../../shared/exportToPdf";
 
 /**
  * @class @name UserTable
@@ -112,7 +113,6 @@ class UserTable extends Component {
   /**
    * columns for the users table
    */
-
   columns = [
     {
       title: "Name",
@@ -183,6 +183,20 @@ class UserTable extends Component {
             style={{ width: 90 }}
           >
             Add User
+          </Button>
+          &nbsp;
+          <Button
+            type="primary"
+            size="small"
+            style={{ width: 90 }}
+            onClick={() =>
+              exportToPdf(
+                ["NAME", "EMAIL", "MOBILE", "ADDRESS"],
+                this.props.data
+              )
+            }
+          >
+            Export
           </Button>
         </div>
         <Table

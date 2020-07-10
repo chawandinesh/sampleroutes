@@ -177,6 +177,18 @@
   position: relative;
 }
 
+.profile-view-image-list {
+  display: flex;
+}
+
+.profie-view-image-card {
+  height: 100px;
+  width: 100px;
+}
+.edit-profile {
+  width: 1000px;
+}
+
 @media only screen and (min-width: 600px) {
   .username {
     justify-content: center;

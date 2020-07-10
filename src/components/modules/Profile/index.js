@@ -11,9 +11,10 @@ import profileActions from "../../../redux/actions/profileActions";
  * @param {object} state
  */
 const mapStateToProps = (state) => {
-  const { profile } = state;
+  const { profile, imageList } = state;
   return {
     profile,
+    imageList,
   };
 };
 
@@ -25,6 +26,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     atnEditProfile: (e) => dispatch(profileActions.atnEditProfile(e)),
+    atnImageUpload: (e) => dispatch(profileActions.atnImageUpload(e)),
   };
 };
 

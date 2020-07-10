@@ -7,7 +7,10 @@ import {
   USER_EDIT,
 } from "../actionTypes/userActionTypes";
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionTypes/loginActionTypes";
-import { PROFILE_EDIT } from "../actionTypes/profileActionTypes";
+import {
+  PROFILE_EDIT,
+  PROFILE_IMAGE_UPLOAD,
+} from "../actionTypes/profileActionTypes";
 import tempData from "../../assets/data/tempData.json";
 import profileData from "../../assets/data/profile.json";
 
@@ -18,6 +21,7 @@ const initialState = {
   users: [],
   isLoginSuccess: false,
   profile: {},
+  imageList: [],
 };
 
 /**
@@ -27,13 +31,6 @@ const initialState = {
  */
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
-    case USER_ADD:
-      return { ...state, users: [...state.users, action.user] };
-    case USER_DELETE:
-      console.log(action.users);
-      return { ...state, users: action.users };
-    case USER_EDIT:
-      return { ...state, users: action.users };
     case LOGIN_SUCCESS:
       return {
         ...state,
@@ -41,12 +38,20 @@ const AppReducer = (state = initialState, action) => {
         users: tempData,
         profile: profileData,
       };
+    case USER_ADD:
+      return { ...state, users: [...state.users, action.user] };
+    case USER_DELETE:
+      return { ...state, users: action.users };
+    case USER_EDIT:
+      return { ...state, users: action.users };
+    case PROFILE_EDIT:
+      return { ...state, profile: action.data };
+    case PROFILE_IMAGE_UPLOAD:
+      return { ...state, imageList: action.image };
     case LOGOUT_SUCCESS:
       return {
         ...initialState,
       };
-    case PROFILE_EDIT:
-      return { ...state, profile: action.data };
     default:
       return state;
   }

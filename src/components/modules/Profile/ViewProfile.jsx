@@ -10,11 +10,25 @@ import { Card } from "antd";
  */
 class ViewProfile extends Component {
   render() {
-    const { data } = this.props;
+    const { data, imageList } = this.props;
     return (
-      <Card title={data.name} className="profie-view-card">
-        <p>{data.about}</p>
-      </Card>
+      <div>
+        <Card title={data.name} className="profie-view-card">
+          <p>{data.about}</p>
+        </Card>
+        <div className="profile-view-image-list">
+          {imageList &&
+            imageList.map((e, idx) => (
+              <Card key={idx}>
+                <img
+                  src={`${e.thumbUrl}`}
+                  alt="image"
+                  className="profie-view-image-card"
+                />
+              </Card>
+            ))}
+        </div>
+      </div>
     );
   }
 }

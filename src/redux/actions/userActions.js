@@ -28,7 +28,6 @@ const atnAddUser = (user) => {
 const atnDeleteUser = (index) => {
   const { users } = store.getState();
   users.splice(index, 1);
-  console.log("afterSplice", users);
   return {
     type: USER_DELETE,
     users,

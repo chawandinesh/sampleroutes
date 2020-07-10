@@ -2,7 +2,8 @@
  * Edit Profile form
  */
 import React, { Component } from "react";
-import { Form, Button, Input, message } from "antd";
+import { Form, Button, Input, message, Row, Col } from "antd";
+import EditPicture from "./EditPicture";
 
 /**
  * @class @name EditProfile
@@ -14,7 +15,7 @@ class EditProfile extends Component {
     wrapperCol: { span: 8 },
   };
   tailLayout = {
-    wrapperCol: { offset: 1 },
+    wrapperCol: { offset: 2 },
   };
 
   /**
@@ -42,28 +43,38 @@ class EditProfile extends Component {
    */
   render() {
     return (
-      <Form
-        {...this.layout}
-        ref={this.formRef}
-        className="edit-profile"
-        name="basic"
-        initialValues={{ remember: true }}
-        onFinish={this.onFinish}
-      >
-        <Form.Item label="Name" name="name">
-          <Input />
-        </Form.Item>
+      <Row>
+        <Col span={12}>
+          <Form
+            {...this.layout}
+            ref={this.formRef}
+            className="edit-profile"
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={this.onFinish}
+          >
+            <Form.Item label="Name" name="name">
+              <Input />
+            </Form.Item>
 
-        <Form.Item label="About" name="about">
-          <Input.TextArea rows={8} />
-        </Form.Item>
+            <Form.Item label="About" name="about">
+              <Input.TextArea rows={8} />
+            </Form.Item>
 
-        <Form.Item {...this.tailLayout}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+            <Form.Item {...this.tailLayout}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+        </Col>
+        <Col>
+          <EditPicture
+            imageList={this.props.imageList}
+            atnImageUpload={this.props.atnImageUpload}
+          />
+        </Col>
+      </Row>
     );
   }
 }
