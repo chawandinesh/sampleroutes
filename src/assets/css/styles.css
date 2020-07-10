@@ -142,8 +142,8 @@
 }
 
 .ant-dropdown-link-profile {
-  position: fixed;
-  left: 80%;
+  position: relative;
+  left: 65%;
 }
 
 .anticon-down svg {
@@ -158,15 +158,25 @@
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  top: 10px;
+  top: 5px;
   text-align: center;
   font-size: 20px;
+}
+
+.dot .text {
+  position: relative;
+  top: -5px;
 }
 
 .profie-view-card {
   width: 500px;
   height: 300px;
 }
+
+.ant-dropdown-link-profile {
+  position: relative;
+}
+
 @media only screen and (min-width: 600px) {
   .username {
     justify-content: center;
@@ -185,5 +195,10 @@
 
   .editUserForm .ant-btn-primary {
     margin-left: 80px;
+  }
+
+  .ant-dropdown-link-profile {
+    position: relative;
+    left: 85%;
   }
 }

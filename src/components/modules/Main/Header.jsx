@@ -57,7 +57,9 @@ class Header extends Component {
           className="ant-dropdown-link-profile"
           onClick={(e) => e.preventDefault()}
         >
-          <span className="dot">^</span>
+          <span className="dot">
+            <p className="text">A</p>
+          </span>
 
           <DownOutlined />
         </a>
