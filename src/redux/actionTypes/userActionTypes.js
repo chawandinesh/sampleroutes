@@ -1,7 +1,6 @@
 /**
  * Action types for Add,Edit and Delete the user
  */
-export const REGISTER_USER = "REGISTER_USER";
-export const UPDATE_USER = "UPDATE_USER";
-export const DELETE_USER = "DELETE_USER";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const USER_ADD = "USER_ADD";
+export const USER_EDIT = "USER_EDIT";
+export const USER_DELETE = "USER_DELETE";

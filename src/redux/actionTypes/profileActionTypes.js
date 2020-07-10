@@ -1,4 +1,4 @@
 /**
  * Action types for Edit profile data
  */
-export const EDIT_PROFILE = "EDIT_PROFILE";
+export const PROFILE_EDIT = "PROFILE_EDIT";

@@ -2,41 +2,52 @@
  * Actions for Add,Edit and Delete the user
  */
 import {
-  REGISTER_USER,
-  DELETE_USER,
-  UPDATE_USER,
-  LOGIN_SUCCESS,
+  USER_ADD,
+  USER_DELETE,
+  USER_EDIT,
 } from "../actionTypes/userActionTypes";
 import { store } from "../store";
-const users = store.getState().users;
 
-export const AtnAddUser = (user) => {
+/**
+ * Adds new user entity into  available users list
+ * @function @name atnAddUser
+ * @param {object} user
+ */
+const atnAddUser = (user) => {
   return {
-    type: REGISTER_USER,
+    type: USER_ADD,
     user,
   };
 };
 
-export const AtnDeleteUser = (index) => {
+/**
+ * Deletes the specific user
+ * @function @name atnDeleteUser
+ * @param {number} index - index value of the specific user
+ */
+const atnDeleteUser = (index) => {
+  const { users } = store.getState();
   users.splice(index, 1);
+  console.log("afterSplice", users);
   return {
-    type: DELETE_USER,
+    type: USER_DELETE,
     users,
   };
 };
 
-export const AtnEditUser = (index, value) => {
+/**
+ * Updates the user
+ * @function @name atnEditUser
+ * @param {number} index - index value of the updating user
+ * @param {object} value - updated data of specific user
+ */
+const atnEditUser = (index, value) => {
+  const { users } = store.getState();
   users.splice(index, 1, value);
   return {
-    type: UPDATE_USER,
+    type: USER_EDIT,
     users,
   };
 };
 
-export const AtnLogin = () => {
-  return {
-    type: LOGIN_SUCCESS,
-  };
-};
-
-export default { AtnAddUser, AtnDeleteUser, AtnEditUser };
+export default { atnAddUser, atnDeleteUser, atnEditUser };

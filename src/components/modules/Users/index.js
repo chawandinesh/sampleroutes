@@ -1,12 +1,12 @@
 /**
- * Container for the Main Component
+ * Container for the Users Component
  */
 import { connect } from "react-redux";
-import UserDisplay from "./UserDisplay";
-import { AtnDeleteUser, AtnEditUser } from "../../../redux/actions/userActions";
+import Users from "./Users";
+import userActions from "../../../redux/actions/userActions";
 
 /**
- * mapStateToProps to send store to the component
+ * mapStateToProps to send store to the Users component
  * @param  state
  */
 const mapStateToProps = (state) => {
@@ -17,14 +17,15 @@ const mapStateToProps = (state) => {
 };
 
 /**
- * mapDispatchToProps responsible to send actions to the components
- * @param dispatch
+ * mapDispatchToProps responsible to send actions to the Users component
+ * @function @name mapDispatchToProps
+ * @param {function} dispatch
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    AtnDeleteUser: (idx) => dispatch(AtnDeleteUser(idx)),
-    AtnEditUser: (idx, value) => dispatch(AtnEditUser(idx, value)),
+    atnDeleteUser: (idx) => dispatch(userActions.atnDeleteUser(idx)),
+    atnEditUser: (idx, value) => dispatch(userActions.atnEditUser(idx, value)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserDisplay);
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

@@ -13,7 +13,7 @@ import {
 } from "@ant-design/icons";
 import Logo from "../../../assets/images/ahex-logo.png";
 import AppRoutes from "../../../AppRoutes";
-import IProfile from "./IProfile";
+import HeaderProfile from "./Header";
 
 const { Header, Sider, Content } = Layout;
 
@@ -68,7 +68,10 @@ class Main extends React.PureComponent {
                     onClick: this.toggle,
                   }
                 )}
-                <IProfile />
+                <HeaderProfile
+                  atnLogout={this.props.atnLogout}
+                  isLoginSuccess={this.props.isLoginSuccess}
+                />
               </Header>
             </div>
             <Content

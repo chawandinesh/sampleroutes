@@ -1,9 +1,9 @@
 /**
- * Container for the Main Component
+ * Container for the User Registration Component
  */
 import { connect } from "react-redux";
 import UserRegistration from "./UserRegistration";
-import { AtnAddUser } from "../../../redux/actions/userActions";
+import userActions from "../../../redux/actions/userActions";
 
 /**
  * mapStateToProps to send store to the component
@@ -14,13 +14,15 @@ const mapStateToProps = (state) => {
     state,
   };
 };
+
 /**
- * mapDispatchToProps responsible to send actions to the components
- * @param dispatch
+ * mapDispatchToProps responsible to send actions to the UserRegistration component
+ * @function @name mapDispatchToProps
+ * @param {function} dispatch
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    AtnAddUser: (e) => dispatch(AtnAddUser(e)),
+    atnAddUser: (e) => dispatch(userActions.atnAddUser(e)),
   };
 };
 

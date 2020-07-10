@@ -34,6 +34,7 @@ class UserRegistration extends PureComponent {
 
   /**
    * @method onFinish
+   * @param {object} values
    * to create new list with submitted data in User Record
    *
    */
@@ -42,11 +43,15 @@ class UserRegistration extends PureComponent {
       data: [...this.state.data, values],
     });
     this.formRef.current.resetFields();
-    this.props.AtnAddUser(values);
+    this.props.atnAddUser(values);
     message.success("Successfully Added");
     this.props.history.push("/users");
   };
 
+  /**
+   * @method @name handleOk
+   * invokes after the submit button clicked
+   */
   handleOk = () => {
     this.setState((prevState) => ({
       visible: !prevState.visible,
@@ -54,6 +59,10 @@ class UserRegistration extends PureComponent {
     this.props.history.push("/users");
   };
 
+  /**
+   * @method @name handleCancel
+   * invokes when canceled the modal
+   */
   handleCancel = () => {
     this.setState((prevState) => ({
       visible: !prevState.visible,

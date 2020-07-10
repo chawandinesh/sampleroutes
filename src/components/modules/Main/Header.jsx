@@ -1,5 +1,5 @@
 /**
- * IProfile
+ * Header
  */
 import React, { Component } from "react";
 import { Menu, Dropdown } from "antd";
@@ -7,10 +7,10 @@ import { withRouter } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 
 /**
- * @class @name IProfile
+ * @class @name Header
  * @classdesc component to show dropdown on right corner of header
  */
-class IProfile extends Component {
+class Header extends Component {
   /**
    * @method @name handleSelect
    * selects the route as per the dropdown selection
@@ -18,6 +18,9 @@ class IProfile extends Component {
   handleSelect = (e) => {
     if (e !== "settings") {
       this.props.history.push(`/${e}`);
+      if (e === "") {
+        this.props.atnLogout();
+      }
     }
   };
 
@@ -63,4 +66,4 @@ class IProfile extends Component {
   }
 }
 
-export default withRouter(IProfile);
+export default withRouter(Header);

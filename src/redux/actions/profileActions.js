@@ -1,13 +1,18 @@
 /**
- * Actions for Add,Edit and Delete the user
+ * Actions for profile
  */
-import { EDIT_PROFILE } from "../actionTypes/profileActionTypes";
+import { PROFILE_EDIT } from "../actionTypes/profileActionTypes";
 
-export const AtnEditProfile = (data) => {
+/**
+ * updates the profile information
+ * @function @name atnEditProfile
+ * @param {object} data - updated result of the profile
+ */
+const atnEditProfile = (data) => {
   return {
-    type: EDIT_PROFILE,
+    type: PROFILE_EDIT,
     data,
   };
 };
 
-export default { AtnEditProfile };
+export default { atnEditProfile };

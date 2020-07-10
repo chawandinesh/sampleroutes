@@ -1,13 +1,14 @@
 /**
- * Container for the Main Component
+ * Container for the Login Component
  */
 import { connect } from "react-redux";
 import Login from "./Login";
-import { AtnLogin } from "../../../redux/actions/userActions";
+import loginAction from "../../../redux/actions/loginActions";
 
 /**
- * mapStateToProps to send store to the component
- * @param  state
+ * mapStateToProps to send store to the Login component
+ * @function @name mapStateToProps
+ * @param  {object} state
  */
 const mapStateToProps = (state) => {
   return {
@@ -16,12 +17,13 @@ const mapStateToProps = (state) => {
 };
 
 /**
- * mapDispatchToProps responsible to send actions to the components
- * @param dispatch
+ * mapDispatchToProps responsible to send actions to the Login component
+ * @function @name mapDispatchToProps
+ * @param {function} dispatch
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    AtnLogin: () => dispatch(AtnLogin()),
+    atnLogin: () => dispatch(loginAction.atnLogin()),
   };
 };
 

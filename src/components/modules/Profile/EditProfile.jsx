@@ -6,7 +6,7 @@ import { Form, Button, Input, message } from "antd";
 
 /**
  * @class @name EditProfile
- * @classdesc Shows the Form on ui to update the data
+ * @classdesc Shows the Form on ui to update the profile data
  */
 class EditProfile extends Component {
   formRef = React.createRef();
@@ -33,7 +33,7 @@ class EditProfile extends Component {
    * @param values is the data submitted data from form
    */
   onFinish = (values) => {
-    this.props.AtnEditProfile(values);
+    this.props.atnEditProfile(values);
     message.success("Updated successfully");
   };
 

@@ -35,7 +35,7 @@ class Login extends Component {
       loginAuth.username === values.username &&
       loginAuth.password === values.password
     ) {
-      this.props.AtnLogin();
+      this.props.atnLogin();
       this.props.history.push("/dashboard");
     } else {
       alert("failed to login");

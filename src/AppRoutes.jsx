@@ -22,6 +22,7 @@ class AppRoutes extends Component {
         {!isLoginSuccess && <Redirect to="/" />}
         {/*  Switch looks through its children Routes and
             renders the first one that matches the current URL. */}
+
         <Switch>
           <Route path="/register">
             <UserRegistration />

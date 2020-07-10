@@ -11,6 +11,7 @@ const { TabPane } = Tabs;
 
 /**
  * @class Profile
+ * @classdesc shows the view and edit tabs on profile ui
  */
 class Profile extends Component {
   /**
@@ -42,7 +43,7 @@ class Profile extends Component {
         >
           <EditProfile
             data={this.props.profile}
-            AtnEditProfile={this.props.AtnEditProfile}
+            atnEditProfile={this.props.atnEditProfile}
           />
         </TabPane>
       </Tabs>

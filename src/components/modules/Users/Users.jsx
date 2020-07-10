@@ -13,7 +13,7 @@ const { confirm } = Modal;
  * @class @name Users
  * component to show the available user details
  */
-class UsersDisplay extends Component {
+class Users extends Component {
   constructor(props) {
     super(props);
     this.editFormRef = React.createRef();
@@ -61,7 +61,7 @@ class UsersDisplay extends Component {
    * close the modal after updation
    */
   onEditFinish = (values) => {
-    this.props.AtnEditUser(this.state.index, values);
+    this.props.atnEditUser(this.state.index, values);
     this.setState({
       visible: false,
     });
@@ -81,7 +81,7 @@ class UsersDisplay extends Component {
       okType: "danger",
       cancelText: "No",
       onOk: () => {
-        this.props.AtnDeleteUser(indexValue);
+        this.props.atnDeleteUser(indexValue);
         this.setState({
           isUserDeleted: true,
         });
@@ -120,4 +120,4 @@ class UsersDisplay extends Component {
   }
 }
 
-export default UsersDisplay;
+export default Users;

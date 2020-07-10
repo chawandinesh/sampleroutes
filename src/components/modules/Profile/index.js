@@ -3,11 +3,12 @@
  */
 import { connect } from "react-redux";
 import Profile from "./Profile";
-import { AtnEditProfile } from "../../../redux/actions/profileActions";
+import profileActions from "../../../redux/actions/profileActions";
 
 /**
- * mapStateToProps to send store to the component
- * @param  state
+ * mapStateToProps to send state to the component
+ * @function @name mapStateToProps
+ * @param {object} state
  */
 const mapStateToProps = (state) => {
   const { profile } = state;
@@ -15,13 +16,15 @@ const mapStateToProps = (state) => {
     profile,
   };
 };
+
 /**
- * mapDispatchToProps responsible to send actions to the components
- * @param dispatch
+ * mapDispatchToProps responsible to send actions to the Profile component
+ * @function @name mapDispatchToProps
+ * @param {function} dispatch
  */
 const mapDispatchToProps = (dispatch) => {
   return {
-    AtnEditProfile: (e) => dispatch(AtnEditProfile(e)),
+    atnEditProfile: (e) => dispatch(profileActions.atnEditProfile(e)),
   };
 };
 
