@@ -71,6 +71,7 @@ class Main extends React.PureComponent {
                 <HeaderProfile
                   atnLogout={this.props.atnLogout}
                   isLoginSuccess={this.props.isLoginSuccess}
+                  imageList={this.props.imageList}
                 />
               </Header>
             </div>

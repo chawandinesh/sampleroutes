@@ -1,14 +1,14 @@
 /**
  * Edit picture
  */
-import React, { useState } from "react";
+import React from "react";
 import { Upload } from "antd";
 
 /**
- * @class @name EditPicture
+ * @class @name ProfilePictureEdit
  * @classdesc to edit and upload the picture in edit tab
  */
-class EditPicture extends React.Component {
+class ProfilePictureEdit extends React.Component {
   /**
    * updates the file list with new  uploaded picture
    * @method @name onChange
@@ -61,4 +61,4 @@ class EditPicture extends React.Component {
   }
 }
 
-export default EditPicture;
+export default ProfilePictureEdit;

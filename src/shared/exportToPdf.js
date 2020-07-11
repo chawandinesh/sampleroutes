@@ -18,12 +18,7 @@ function exportPdf(keys, dataTable) {
   const title = "Users List";
   const headers = [keys];
 
-  const data = dataTable.map((elt) => [
-    elt.name,
-    elt.email,
-    elt.mobile,
-    elt.address,
-  ]);
+  const data = dataTable.map((e) => Object.values(e));
 
   let content = {
     startY: 50,
@@ -33,7 +28,7 @@ function exportPdf(keys, dataTable) {
 
   doc.text(title, marginLeft, 40);
   doc.autoTable(content);
-  doc.save("report.pdf");
+  doc.save("users.pdf");
 }
 
 export default exportPdf;

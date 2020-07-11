@@ -3,13 +3,13 @@
  */
 import React, { Component } from "react";
 import { Form, Button, Input, message, Row, Col } from "antd";
-import EditPicture from "./EditPicture";
+import EditPicture from "./ProfilePictureEdit";
 
 /**
- * @class @name EditProfile
+ * @class @name ProfileEdit
  * @classdesc Shows the Form on ui to update the profile data
  */
-class EditProfile extends Component {
+class ProfileEdit extends Component {
   formRef = React.createRef();
   layout = {
     wrapperCol: { span: 8 },
@@ -43,8 +43,8 @@ class EditProfile extends Component {
    */
   render() {
     return (
-      <Row>
-        <Col span={12}>
+      <Col>
+        <Row span={12}>
           <Form
             {...this.layout}
             ref={this.formRef}
@@ -67,16 +67,16 @@ class EditProfile extends Component {
               </Button>
             </Form.Item>
           </Form>
-        </Col>
-        <Col>
+        </Row>
+        <Row>
           <EditPicture
             imageList={this.props.imageList}
             atnImageUpload={this.props.atnImageUpload}
           />
-        </Col>
-      </Row>
+        </Row>
+      </Col>
     );
   }
 }
 
-export default EditProfile;
+export default ProfileEdit;

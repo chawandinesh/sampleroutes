@@ -3,7 +3,6 @@
  */
 import React, { Component, Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import UserRegistration from "./components/modules/UserRegistration";
 import Profile from "./components/modules/Profile";
 import Dashboard from "./components/modules/Dashboard";
 import UserDisplay from "./components/modules/Users";
@@ -24,9 +23,6 @@ class AppRoutes extends Component {
             renders the first one that matches the current URL. */}
 
         <Switch>
-          <Route path="/register">
-            <UserRegistration />
-          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>

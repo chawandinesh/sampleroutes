@@ -11,9 +11,10 @@ import Main from "./Main";
  * @param  {object} state
  */
 const mapStateToProps = (state) => {
-  const { isLoginSuccess } = state;
+  const { isLoginSuccess, imageList } = state;
   return {
     isLoginSuccess,
+    imageList,
   };
 };
 

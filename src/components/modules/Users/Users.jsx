@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import { Modal, message } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import UserTable from "./UserTable";
-import EditUserModal from "./EditUserModal";
+import EditUserModal from "./UserEditModal";
 
 const { confirm } = Modal;
 
@@ -104,6 +104,9 @@ class Users extends Component {
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}
           data={this.props.users}
+          atnAddUser={this.props.atnAddUser}
+          isAddUserModalVisible={this.props.isAddUserModalVisible}
+          atnUserModalToggle={this.props.atnUserModalToggle}
         />
 
         <EditUserModal

@@ -10,9 +10,10 @@ import userActions from "../../../redux/actions/userActions";
  * @param  state
  */
 const mapStateToProps = (state) => {
-  const { users } = state;
+  const { users, isAddUserModalVisible } = state;
   return {
     users,
+    isAddUserModalVisible,
   };
 };
 
@@ -23,8 +24,10 @@ const mapStateToProps = (state) => {
  */
 const mapDispatchToProps = (dispatch) => {
   return {
+    atnAddUser: (value) => dispatch(userActions.atnAddUser(value)),
     atnDeleteUser: (idx) => dispatch(userActions.atnDeleteUser(idx)),
     atnEditUser: (idx, value) => dispatch(userActions.atnEditUser(idx, value)),
+    atnUserModalToggle: () => dispatch(userActions.atnUserModalToggle()),
   };
 };
 

@@ -5,6 +5,7 @@ import {
   USER_ADD,
   USER_DELETE,
   USER_EDIT,
+  USER_ADD_MODAL_TOGGLE,
 } from "../actionTypes/userActionTypes";
 import { store } from "../store";
 
@@ -17,6 +18,16 @@ const atnAddUser = (user) => {
   return {
     type: USER_ADD,
     user,
+  };
+};
+
+/**
+ * to toggle modal visible
+ * @function @name atnUserModalToggle
+ */
+const atnUserModalToggle = () => {
+  return {
+    type: USER_ADD_MODAL_TOGGLE,
   };
 };
 
@@ -49,4 +60,4 @@ const atnEditUser = (index, value) => {
   };
 };
 
-export default { atnAddUser, atnDeleteUser, atnEditUser };
+export default { atnAddUser, atnDeleteUser, atnEditUser, atnUserModalToggle };

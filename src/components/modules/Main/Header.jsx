@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { Menu, Dropdown } from "antd";
 import { withRouter } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
+import _ from "lodash";
 
 /**
  * @class @name Header
@@ -57,9 +58,17 @@ class Header extends Component {
           className="ant-dropdown-link-profile"
           onClick={(e) => e.preventDefault()}
         >
-          <span className="dot">
-            <p className="text">A</p>
-          </span>
+          {this.props.imageList.length ? (
+            <img
+              className="header-profile-image"
+              src={`${_.get(this.props.imageList[0], "thumbUrl")}`}
+              alt="image"
+            />
+          ) : (
+            <span className="dot">
+              <p className="text">A</p>
+            </span>
+          )}
 
           <DownOutlined />
         </a>

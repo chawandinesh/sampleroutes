@@ -136,7 +136,7 @@
   background-color: #3797d5;
 }
 
-.add-user {
+.action-button-user {
   display: flex;
   justify-content: flex-end;
 }
@@ -189,6 +189,23 @@
   width: 1000px;
 }
 
+.header-profile-image {
+  height: 40px;
+  border-radius: 30px;
+}
+
+.anticon-user-add {
+  font-size: 30px;
+  color: #2a8ef7;
+}
+.anticon-file-pdf {
+  font-size: 30px;
+  color: #cb2f2a;
+}
+.anticon-file-excel {
+  font-size: 30px;
+  color: #317246;
+}
 @media only screen and (min-width: 600px) {
   .username {
     justify-content: center;

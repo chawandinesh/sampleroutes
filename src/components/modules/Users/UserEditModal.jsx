@@ -9,7 +9,7 @@ import UserForm from "./UserForm";
  * @class @name EditUserModal
  * Component to update existing user data
  */
-class EditUserModal extends Component {
+class UserEditModal extends Component {
   /**
    * @render
    * shows modal for update existing data
@@ -48,4 +48,4 @@ class EditUserModal extends Component {
   }
 }
 
-export default EditUserModal;
+export default UserEditModal;

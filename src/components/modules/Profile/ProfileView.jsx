@@ -3,12 +3,13 @@
  */
 import React, { Component } from "react";
 import { Card } from "antd";
+import _ from "lodash";
 
 /**
- * @class @name ViewProfile
+ * @class @name ProfileView
  * shows the profile data (read only)
  */
-class ViewProfile extends Component {
+class ProfileView extends Component {
   render() {
     const { data, imageList } = this.props;
     return (
@@ -17,20 +18,21 @@ class ViewProfile extends Component {
           <p>{data.about}</p>
         </Card>
         <div className="profile-view-image-list">
-          {imageList &&
-            imageList.map((e, idx) => (
-              <Card key={idx}>
-                <img
-                  src={`${e.thumbUrl}`}
-                  alt="image"
-                  className="profie-view-image-card"
-                />
-              </Card>
-            ))}
+          {imageList.length ? (
+            <Card>
+              <img
+                src={`${_.get(imageList[0], "thumbUrl")}`}
+                alt="profileImage"
+                className="profie-view-image-card"
+              />
+            </Card>
+          ) : (
+            <div />
+          )}
         </div>
       </div>
     );
   }
 }
 
-export default ViewProfile;
+export default ProfileView;

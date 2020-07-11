@@ -2,11 +2,21 @@
  * User table to show the user data
  */
 import React, { Component } from "react";
-import { Table, Row, Col, Input, Button, Space } from "antd";
+import { Table, Row, Col, Input, Button, Space, Tooltip } from "antd";
 import { withRouter } from "react-router-dom";
-import { EditFilled, DeleteFilled, SearchOutlined } from "@ant-design/icons";
+import _ from "lodash";
+import {
+  EditFilled,
+  DeleteFilled,
+  SearchOutlined,
+  UserAddOutlined,
+  FilePdfOutlined,
+  FileExcelOutlined,
+} from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
+import UserAddModal from "./UserAddModal";
 import exportToPdf from "../../../shared/exportToPdf";
+import exportToExcel from "../../../shared/exportToExcel";
 
 /**
  * @class @name UserTable
@@ -18,8 +28,13 @@ class UserTable extends Component {
     this.state = {
       searchText: "",
       searchedColumn: "",
+      userModalVisible: false,
     };
   }
+
+  handleAddUser = () => {
+    this.props.atnUserModalToggle();
+  };
 
   /**
    * @method getColumnSearchProps
@@ -105,6 +120,10 @@ class UserTable extends Component {
     });
   };
 
+  /**
+   * @method handle reset
+   * reset to initial state to table
+   */
   handleReset = (clearFilters) => {
     clearFilters();
     this.setState({ searchText: "" });
@@ -147,21 +166,25 @@ class UserTable extends Component {
       render: (text, record) => (
         <Row>
           <Col span={10}>
-            <EditFilled
-              style={{ color: "#2A8EF7", fontSize: "20px" }}
-              onClick={() =>
-                this.props.handleEdit(this.props.data.indexOf(record), record)
-              }
-            />
+            <Tooltip placement="topRight" title="Edit">
+              <EditFilled
+                style={{ color: "#2A8EF7", fontSize: "20px" }}
+                onClick={() =>
+                  this.props.handleEdit(this.props.data.indexOf(record), record)
+                }
+              />
+            </Tooltip>
           </Col>
           <Col span={10}>
-            <DeleteFilled
-              style={{ color: "red", fontSize: "20px" }}
-              danger="true"
-              onClick={() =>
-                this.props.handleDelete(this.props.data.indexOf(record))
-              }
-            />
+            <Tooltip placement="topRight" title="Delete">
+              <DeleteFilled
+                style={{ color: "red", fontSize: "20px" }}
+                danger="true"
+                onClick={() =>
+                  this.props.handleDelete(this.props.data.indexOf(record))
+                }
+              />
+            </Tooltip>
           </Col>
         </Row>
       ),
@@ -175,29 +198,26 @@ class UserTable extends Component {
   render() {
     return (
       <div>
-        <div className="add-user">
-          <Button
-            type="primary"
-            onClick={() => this.props.history.push("/register")}
-            size="small"
-            style={{ width: 90 }}
-          >
-            Add User
-          </Button>
-          &nbsp;
-          <Button
-            type="primary"
-            size="small"
-            style={{ width: 90 }}
-            onClick={() =>
-              exportToPdf(
-                ["NAME", "EMAIL", "MOBILE", "ADDRESS"],
-                this.props.data
-              )
-            }
-          >
-            Export
-          </Button>
+        <div className="action-button-user">
+          <Tooltip placement="topRight" title="Add user">
+            <UserAddOutlined onClick={() => this.handleAddUser()} />
+          </Tooltip>
+          &nbsp; &nbsp;
+          <Tooltip placement="topRight" title="Export as Pdf">
+            <FilePdfOutlined
+              onClick={() =>
+                exportToPdf(_.keys(_.head(this.props.data)), this.props.data)
+              }
+            />
+          </Tooltip>
+          &nbsp; &nbsp;
+          <Tooltip placement="topRight" title="Export as Excel">
+            <FileExcelOutlined
+              onClick={() =>
+                exportToExcel(_.keys(_.head(this.props.data)), this.props.data)
+              }
+            />
+          </Tooltip>
         </div>
         <Table
           columns={this.columns}
@@ -205,6 +225,12 @@ class UserTable extends Component {
           dataSource={[...this.props.data]}
           pagination={{ pageSize: 8 }}
           rowKey={(record) => record.mobile}
+        />
+
+        <UserAddModal
+          isAddUserModalVisible={this.props.isAddUserModalVisible}
+          atnAddUser={this.props.atnAddUser}
+          atnUserModalToggle={this.props.atnUserModalToggle}
         />
       </div>
     );

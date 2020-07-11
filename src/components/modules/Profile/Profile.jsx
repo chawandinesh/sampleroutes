@@ -4,8 +4,8 @@
 import React, { Component } from "react";
 import { Tabs } from "antd";
 import { EditFilled, FolderOpenFilled } from "@ant-design/icons";
-import ViewProfile from "./ViewProfile";
-import EditProfile from "./EditProfile";
+import ViewProfile from "./ProfileView";
+import EditProfile from "./ProfileEdit";
 
 const { TabPane } = Tabs;
 

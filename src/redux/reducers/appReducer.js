@@ -5,6 +5,7 @@ import {
   USER_ADD,
   USER_DELETE,
   USER_EDIT,
+  USER_ADD_MODAL_TOGGLE,
 } from "../actionTypes/userActionTypes";
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionTypes/loginActionTypes";
 import {
@@ -19,6 +20,7 @@ import profileData from "../../assets/data/profile.json";
  */
 const initialState = {
   users: [],
+  isAddUserModalVisible: false,
   isLoginSuccess: false,
   profile: {},
   imageList: [],
@@ -44,6 +46,8 @@ const AppReducer = (state = initialState, action) => {
       return { ...state, users: action.users };
     case USER_EDIT:
       return { ...state, users: action.users };
+    case USER_ADD_MODAL_TOGGLE:
+      return { ...state, isAddUserModalVisible: !state.isAddUserModalVisible };
     case PROFILE_EDIT:
       return { ...state, profile: action.data };
     case PROFILE_IMAGE_UPLOAD:

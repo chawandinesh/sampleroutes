@@ -3,20 +3,18 @@
  */
 import React, { PureComponent } from "react";
 import { Form, message, Modal } from "antd";
-import { withRouter } from "react-router-dom";
-import UserForm from "../Users/UserForm";
+import UserForm from "./UserForm";
 
 /**
  * @class
  * @name UserRegistration screen
  */
-class UserRegistration extends PureComponent {
+class UserAddModal extends PureComponent {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
     this.state = {
       data: [],
-      visible: true,
     };
   }
 
@@ -45,7 +43,7 @@ class UserRegistration extends PureComponent {
     this.formRef.current.resetFields();
     this.props.atnAddUser(values);
     message.success("Successfully Added");
-    this.props.history.push("/users");
+    this.props.atnUserModalToggle();
   };
 
   /**
@@ -53,10 +51,9 @@ class UserRegistration extends PureComponent {
    * invokes after the submit button clicked
    */
   handleOk = () => {
-    this.setState((prevState) => ({
-      visible: !prevState.visible,
-    }));
-    this.props.history.push("/users");
+    this.setState({
+      visible: false,
+    });
   };
 
   /**
@@ -64,10 +61,7 @@ class UserRegistration extends PureComponent {
    * invokes when canceled the modal
    */
   handleCancel = () => {
-    this.setState((prevState) => ({
-      visible: !prevState.visible,
-    }));
-    this.props.history.push("/users");
+    this.props.atnUserModalToggle();
   };
 
   /**
@@ -75,11 +69,12 @@ class UserRegistration extends PureComponent {
    * returns the form to add new user into records
    */
   render() {
+    console.log(this.props);
     return (
       <div>
         <Modal
           title="Add User"
-          visible={this.state.visible}
+          visible={this.props.isAddUserModalVisible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={null}
@@ -100,4 +95,4 @@ class UserRegistration extends PureComponent {
   }
 }
 
-export default withRouter(UserRegistration);
+export default UserAddModal;
