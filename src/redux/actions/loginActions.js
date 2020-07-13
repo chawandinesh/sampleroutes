@@ -1,14 +1,14 @@
 /**
  * Actions for login and logout
  */
-import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionTypes/loginActionTypes";
+import loginActionTypes from "../actionTypes/loginActionTypes";
 
 /**
  * @function @name atnLogin
  */
 const atnLogin = () => {
   return {
-    type: LOGIN_SUCCESS,
+    type: loginActionTypes.LOGIN_SUCCESS,
   };
 };
 
@@ -17,7 +17,7 @@ const atnLogin = () => {
  */
 const atnLogout = () => {
   return {
-    type: LOGOUT_SUCCESS,
+    type: loginActionTypes.LOGOUT_SUCCESS,
   };
 };
 

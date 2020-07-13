@@ -13,6 +13,21 @@
   }
 }
 
+.ant-layout-content {
+  min-height: auto;
+  height: fit-content;
+}
+
+.site-layout-background {
+  min-height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ant-layout-content .site-layout-background {
+  min-height: auto;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -206,6 +221,35 @@
 .anticon-file-excel {
   font-size: 30px;
   color: #317246;
+}
+
+.charts-collapse-pannel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.charts-collapse-pannel .ant-collapse {
+  width: 380px;
+}
+
+.users-table {
+  width: 100%;
+}
+
+.header-collapse-profile {
+  display: flex;
+  position: relative;
+  left: -150px;
+}
+
+.header-collapse {
+  position: relative;
+  top: 5px;
+  height: 48px;
+}
+
+.header-collapse-pannel {
+  border: 0.5px solid;
 }
 @media only screen and (min-width: 600px) {
   .username {

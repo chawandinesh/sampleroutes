@@ -1,17 +1,9 @@
 /**
  * Reducer for the store
  */
-import {
-  USER_ADD,
-  USER_DELETE,
-  USER_EDIT,
-  USER_ADD_MODAL_TOGGLE,
-} from "../actionTypes/userActionTypes";
-import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionTypes/loginActionTypes";
-import {
-  PROFILE_EDIT,
-  PROFILE_IMAGE_UPLOAD,
-} from "../actionTypes/profileActionTypes";
+import userActionTypes from "../actionTypes/userActionTypes";
+import loginActionTypes from "../actionTypes/loginActionTypes";
+import profileActionTypes from "../actionTypes/profileActionTypes";
 import tempData from "../../assets/data/tempData.json";
 import profileData from "../../assets/data/profile.json";
 
@@ -24,6 +16,7 @@ const initialState = {
   isLoginSuccess: false,
   profile: {},
   imageList: [],
+  menuSelelectedKey: [],
 };
 
 /**
@@ -33,26 +26,29 @@ const initialState = {
  */
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case loginActionTypes.LOGIN_SUCCESS:
       return {
         ...state,
         isLoginSuccess: true,
         users: tempData,
         profile: profileData,
+        menuSelelectedKey: ["1"],
       };
-    case USER_ADD:
+    case userActionTypes.USER_ADD:
       return { ...state, users: [...state.users, action.user] };
-    case USER_DELETE:
+    case userActionTypes.USER_DELETE:
       return { ...state, users: action.users };
-    case USER_EDIT:
+    case userActionTypes.USER_EDIT:
       return { ...state, users: action.users };
-    case USER_ADD_MODAL_TOGGLE:
+    case userActionTypes.USER_ADD_MODAL_TOGGLE:
       return { ...state, isAddUserModalVisible: !state.isAddUserModalVisible };
-    case PROFILE_EDIT:
+    case profileActionTypes.PROFILE_EDIT:
       return { ...state, profile: action.data };
-    case PROFILE_IMAGE_UPLOAD:
+    case profileActionTypes.PROFILE_IMAGE_UPLOAD:
       return { ...state, imageList: action.image };
-    case LOGOUT_SUCCESS:
+    case userActionTypes.MENU_SELECT_KEY:
+      return { ...state, menuSelelectedKey: [action.value] };
+    case loginActionTypes.LOGOUT_SUCCESS:
       return {
         ...initialState,
       };

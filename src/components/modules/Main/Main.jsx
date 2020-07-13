@@ -63,8 +63,8 @@ class Main extends React.PureComponent {
             </Menu>
           </Sider>
           <Layout className="site-layout">
-            <div>
-              <Header className="site-layout-background" style={{ padding: 0 }}>
+            <Header className="site-layout-background" style={{ padding: 0 }}>
+              <div>
                 {React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
                   {
@@ -72,19 +72,21 @@ class Main extends React.PureComponent {
                     onClick: this.toggle,
                   }
                 )}
+              </div>
+              <div className="header-collapse-profile">
                 <HeaderProfile
                   atnLogout={this.props.atnLogout}
                   isLoginSuccess={this.props.isLoginSuccess}
                   imageList={this.props.imageList}
+                  atnMenuSelectedKey={this.props.atnMenuSelectedKey}
                 />
-              </Header>
-            </div>
+              </div>
+            </Header>
             <Content
               className="site-layout-background"
               style={{
                 margin: "24px 16px",
                 padding: 24,
-                minHeight: 280,
               }}
             >
               <AppRoutes isLoginSuccess={isLoginSuccess} />

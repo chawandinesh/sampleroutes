@@ -88,7 +88,7 @@ class Users extends Component {
         message.success("Deleted successfully");
       },
       onCancel() {
-        console.log("Cancel");
+        console.log("cancelled");
         message.error("Canceled");
       },
     });
@@ -99,7 +99,7 @@ class Users extends Component {
    */
   render() {
     return (
-      <div>
+      <div className="users-table">
         <UserTable
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}

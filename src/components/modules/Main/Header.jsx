@@ -16,7 +16,8 @@ class Header extends Component {
    * @method @name handleSelect
    * selects the route as per the dropdown selection
    */
-  handleSelect = (e) => {
+  handleSelect = (e, key) => {
+    this.props.atnMenuSelectedKey(key);
     if (e !== "settings") {
       this.props.history.push(`/${e}`);
       if (e === "") {
@@ -31,7 +32,7 @@ class Header extends Component {
   menu = (
     <Menu>
       <Menu.Item key="0">
-        <Button type="link" onClick={(e) => this.handleSelect("profile")}>
+        <Button type="link" onClick={(e) => this.handleSelect("profile", "2")}>
           {" "}
           Profile
         </Button>
@@ -56,27 +57,29 @@ class Header extends Component {
    */
   render() {
     return (
-      <Dropdown overlay={this.menu} trigger={["click"]}>
-        <Button
-          type="default"
-          className="ant-dropdown-link-profile"
-          onClick={(e) => e.preventDefault()}
-        >
-          {this.props.imageList.length ? (
-            <img
-              className="header-profile-image"
-              src={`${_.get(this.props.imageList[0], "thumbUrl")}`}
-              alt="profileImage"
-            />
-          ) : (
-            <span className="dot">
-              <p className="text">A</p>
-            </span>
-          )}
+      <div>
+        <Dropdown overlay={this.menu} trigger={["click"]}>
+          <Button
+            type="default"
+            className="ant-dropdown-link-profile"
+            onClick={(e) => e.preventDefault()}
+          >
+            {this.props.imageList.length ? (
+              <img
+                className="header-profile-image"
+                src={`${_.get(this.props.imageList[0], "thumbUrl")}`}
+                alt="profileImage"
+              />
+            ) : (
+              <span className="dot">
+                <p className="text">A</p>
+              </span>
+            )}
 
-          <DownOutlined />
-        </Button>
-      </Dropdown>
+            <DownOutlined />
+          </Button>
+        </Dropdown>
+      </div>
     );
   }
 }

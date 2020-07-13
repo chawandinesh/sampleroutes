@@ -1,10 +1,8 @@
 /**
  * Actions for profile
  */
-import {
-  PROFILE_EDIT,
-  PROFILE_IMAGE_UPLOAD,
-} from "../actionTypes/profileActionTypes";
+
+import profileActionTypes from "../actionTypes/profileActionTypes";
 
 /**
  * updates the profile information
@@ -13,14 +11,14 @@ import {
  */
 const atnEditProfile = (data) => {
   return {
-    type: PROFILE_EDIT,
+    type: profileActionTypes.PROFILE_EDIT,
     data,
   };
 };
 
 const atnImageUpload = (image) => {
   return {
-    type: PROFILE_IMAGE_UPLOAD,
+    type: profileActionTypes.PROFILE_IMAGE_UPLOAD,
     image,
   };
 };
