@@ -94,6 +94,8 @@
   border: none;
   border-bottom: 1px solid;
   box-shadow: none;
+  padding-left: 10px;
+  color: #6f8ba4;
 }
 
 #basic_password {
@@ -101,6 +103,7 @@
   border-bottom: 1px solid;
   box-shadow: none;
   padding-left: 10px;
+  color: #6f8ba4;
 }
 .ant-input-password {
   border-color: white;
@@ -113,6 +116,7 @@
 
 .ant-form-item-has-error .ant-input-affix-wrapper {
   border-color: white;
+  box-shadow: none;
 }
 .ant-form-item-has-error .ant-input-affix-wrapper:hover {
   border-color: white;
@@ -129,10 +133,11 @@
 .modal.show .modal-dialog {
   box-shadow: 0px 0px 20px black;
   width: 370px;
+  margin: 0 auto;
 }
 .login-button {
   width: 165px;
-  left: -20px;
+  /* left: -20px; */
   background-color: #3797d5;
 }
 
@@ -207,17 +212,86 @@
   font-size: 30px;
   color: #317246;
 }
+
+/* Styles here */
+
+.logo-container{
+width: 200px;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 20px;
+}
+.ant-form-item-control{
+  max-width: 80%;
+  margin: 0 auto;
+}
+.ant-input-affix-wrapper{
+  border: 0;
+}
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+  
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.ant-form-item-has-error .ant-form-item-explain, .ant-form-item-has-error .ant-form-item-split{
+  padding-left: 12px;
+}
+/* .ant-row {
+margin: 0;
+} */
+.footer-modal{
+  justify-content: space-around;
+}
+.footer-modal .ant-col{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.footer-modal .ant-row{
+  margin-bottom: 0;
+}
+.remember-me {
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+.ant-btn-link{
+  color: #6f8ba4;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+.ant-btn-link:hover{
+  color: #6f8ba4;
+}
+button{
+  outline: none;
+    box-shadow: none;
+    border: 0;
+}
+.modal{
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+/* #login .modal-dialog {
+  -webkit-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  margin: 0 auto; } */
+/* Media screens */
 @media only screen and (min-width: 600px) {
   .username {
     justify-content: center;
-    width: 470px;
-    margin-left: -60px;
+    /* width: 470px;
+    margin-left: -60px; */
   }
 
   .password {
     justify-content: center;
-    margin-left: -117px;
-    width: 600px;
+    /* margin-left: -117px;
+    width: 600px; */
+    margin-bottom: 5px;
   }
   .userForm {
     margin-left: 30px;
@@ -230,5 +304,15 @@
   .ant-dropdown-link-profile {
     position: relative;
     left: 85%;
+  }
+}
+@media (max-width: 420px) {
+  .modal.show  {
+   padding-left: 0 !important;
+  }
+  .modal.show .modal-dialog {
+    box-shadow: 0px 0px 20px black;
+    width: 90%;
+    margin: 0 auto;
   }
 }
