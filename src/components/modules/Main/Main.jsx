@@ -10,6 +10,7 @@ import {
   UserOutlined,
   DashboardOutlined,
   TeamOutlined,
+  LineChartOutlined,
 } from "@ant-design/icons";
 import Logo from "../../../assets/images/ahex-logo.png";
 import AppRoutes from "../../../AppRoutes";
@@ -55,6 +56,9 @@ class Main extends React.PureComponent {
               </Menu.Item>
               <Menu.Item key="3" icon={<TeamOutlined />}>
                 <Link to="/users">Users</Link>
+              </Menu.Item>
+              <Menu.Item key="4" icon={<LineChartOutlined />}>
+                <Link to="/charts">Charts</Link>
               </Menu.Item>
             </Menu>
           </Sider>

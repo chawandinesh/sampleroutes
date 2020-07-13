@@ -7,6 +7,7 @@ import Profile from "./components/modules/Profile";
 import Dashboard from "./components/modules/Dashboard";
 import UserDisplay from "./components/modules/Users";
 import Login from "./components/modules/Login";
+import Charts from "./components/modules/Charts";
 
 /**
  * contains all the required routes  for the application
@@ -31,6 +32,9 @@ class AppRoutes extends Component {
           </Route>
           <Route path="/users">
             <UserDisplay />
+          </Route>
+          <Route path="/charts">
+            <Charts />
           </Route>
           <Route exact path="/">
             <Login />

@@ -160,7 +160,7 @@
   position: relative;
   top: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 33px;
 }
 
 .dot .text {
@@ -175,6 +175,7 @@
 
 .ant-dropdown-link-profile {
   position: relative;
+  border: none;
 }
 
 .profile-view-image-list {

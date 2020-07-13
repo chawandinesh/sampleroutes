@@ -2,7 +2,7 @@
  * Header
  */
 import React, { Component } from "react";
-import { Menu, Dropdown } from "antd";
+import { Menu, Dropdown, Button } from "antd";
 import { withRouter } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import _ from "lodash";
@@ -31,19 +31,22 @@ class Header extends Component {
   menu = (
     <Menu>
       <Menu.Item key="0">
-        <a role="button" onClick={(e) => this.handleSelect("profile")}>
+        <Button type="link" onClick={(e) => this.handleSelect("profile")}>
           {" "}
           Profile
-        </a>
+        </Button>
       </Menu.Item>
       <Menu.Item key="1">
-        <a role="button" onClick={(e) => this.handleSelect("settings")}>
+        <Button type="link" onClick={(e) => this.handleSelect("settings")}>
           {" "}
           settings
-        </a>
+        </Button>
       </Menu.Item>
       <Menu.Item key="2">
-        <a onClick={(e) => this.handleSelect("")}> Logout</a>
+        <Button type="link" onClick={(e) => this.handleSelect("")}>
+          {" "}
+          Logout
+        </Button>
       </Menu.Item>
     </Menu>
   );
@@ -54,7 +57,8 @@ class Header extends Component {
   render() {
     return (
       <Dropdown overlay={this.menu} trigger={["click"]}>
-        <a
+        <Button
+          type="default"
           className="ant-dropdown-link-profile"
           onClick={(e) => e.preventDefault()}
         >
@@ -62,7 +66,7 @@ class Header extends Component {
             <img
               className="header-profile-image"
               src={`${_.get(this.props.imageList[0], "thumbUrl")}`}
-              alt="image"
+              alt="profileImage"
             />
           ) : (
             <span className="dot">
@@ -71,7 +75,7 @@ class Header extends Component {
           )}
 
           <DownOutlined />
-        </a>
+        </Button>
       </Dropdown>
     );
   }
