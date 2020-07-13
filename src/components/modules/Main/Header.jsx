@@ -16,8 +16,7 @@ class Header extends Component {
    * @method @name handleSelect
    * selects the route as per the dropdown selection
    */
-  handleSelect = (e, key) => {
-    this.props.atnMenuSelectedKey(key);
+  handleSelect = (e) => {
     if (e !== "settings") {
       this.props.history.push(`/${e}`);
       if (e === "") {
@@ -32,7 +31,7 @@ class Header extends Component {
   menu = (
     <Menu>
       <Menu.Item key="0">
-        <Button type="link" onClick={(e) => this.handleSelect("profile", "2")}>
+        <Button type="link" onClick={(e) => this.handleSelect("profile")}>
           {" "}
           Profile
         </Button>

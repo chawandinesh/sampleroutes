@@ -24,6 +24,10 @@ class Users extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.atnMenuSelectedKey("3");
+  }
+
   /**
    * @method @name handleEditButton
    * Show modal and fill existing details into form

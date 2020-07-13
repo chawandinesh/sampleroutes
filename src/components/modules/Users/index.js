@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
     atnDeleteUser: (idx) => dispatch(userActions.atnDeleteUser(idx)),
     atnEditUser: (idx, value) => dispatch(userActions.atnEditUser(idx, value)),
     atnUserModalToggle: () => dispatch(userActions.atnUserModalToggle()),
+    atnMenuSelectedKey: (e) => dispatch(userActions.atnMenuSelectedKey(e)),
   };
 };
 

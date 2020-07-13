@@ -69,7 +69,6 @@ class UserAddModal extends PureComponent {
    * returns the form to add new user into records
    */
   render() {
-    console.log(this.props);
     return (
       <div>
         <Modal

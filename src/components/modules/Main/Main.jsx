@@ -47,7 +47,12 @@ class Main extends React.PureComponent {
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
             <img src={Logo} className="logo" alt="ahex-logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+            <Menu
+              theme="dark"
+              mode="inline"
+              defaultSelectedKeys={["1"]}
+              selectedKeys={this.props.menuSelelectedKey}
+            >
               <Menu.Item key="1" icon={<DashboardOutlined />}>
                 <Link to="/dashboard">Dashboard</Link>
               </Menu.Item>

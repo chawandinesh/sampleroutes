@@ -16,7 +16,7 @@ const initialState = {
   isLoginSuccess: false,
   profile: {},
   imageList: [],
-  menuSelelectedKey: [],
+  menuSelelectedKey: "",
 };
 
 /**
@@ -32,7 +32,7 @@ const AppReducer = (state = initialState, action) => {
         isLoginSuccess: true,
         users: tempData,
         profile: profileData,
-        menuSelelectedKey: ["1"],
+        menuSelelectedKey: "1",
       };
     case userActionTypes.USER_ADD:
       return { ...state, users: [...state.users, action.user] };
@@ -47,7 +47,7 @@ const AppReducer = (state = initialState, action) => {
     case profileActionTypes.PROFILE_IMAGE_UPLOAD:
       return { ...state, imageList: action.image };
     case userActionTypes.MENU_SELECT_KEY:
-      return { ...state, menuSelelectedKey: [action.value] };
+      return { ...state, menuSelelectedKey: action.value };
     case loginActionTypes.LOGOUT_SUCCESS:
       return {
         ...initialState,
