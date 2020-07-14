@@ -29,7 +29,7 @@ class Charts extends Component {
    */
   render() {
     return (
-      <div>
+      <div className="charts-sec">
         <h1>Charts</h1>
         <div className="charts-collapse-pannel">
           <div>

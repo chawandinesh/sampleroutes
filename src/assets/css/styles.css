@@ -101,11 +101,8 @@ body{
 }
 
 .dashboard-logo {
-  /* height: 50px;
-  padding-left: 20px; */
   height: 64px;
   color: #ffffff;
-  /* width: 150px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,15 +111,9 @@ body{
 .dashboard-logo h3{
   color: #ffffff;
 }
-
-/* .ant-menu-inline {
-  padding-top: 30px;
-} */
-
 .forgotPassword {
   margin-left: 300px;
 }
-
 .ForgotPasswordLogin {
   margin-left: -40px;
 }
@@ -174,7 +165,6 @@ body{
 }
 .login-button {
   width: 165px;
-  /* left: -20px; */
   background-color: #3797d5;
 }
 
@@ -183,10 +173,6 @@ body{
   justify-content: flex-end;
 }
 
-/* .ant-dropdown-link-profile {
-  position: relative;
-  left: 65%;
-} */
 
 .anticon-down svg ,.anticon-menu-fold{
   font-size: 18px;
@@ -201,15 +187,11 @@ body{
   color: white;
   border-radius: 50%;
   display: inline-block;
-  /* position: relative;
-  top: 5px; */
   text-align: center;
   font-size: 31px;
 }
 
 .dot .text {
-  /* position: relative;
-  top: -5px; */
   margin: 0;
 }
 
@@ -217,11 +199,6 @@ body{
   width: 500px;
   height: 300px;
 }
-
-/* .ant-dropdown-link-profile {
-  position: relative;
-  border: none;
-} */
 
 .profile-view-image-list {
   display: flex;
@@ -292,9 +269,6 @@ margin-bottom: 20px;
 .ant-form-item-has-error .ant-form-item-explain, .ant-form-item-has-error .ant-form-item-split{
   padding-left: 12px;
 }
-/* .ant-row {
-margin: 0;
-} */
 .footer-modal{
   justify-content: space-around;
 }
@@ -337,13 +311,6 @@ box-shadow: none;
 border: 0;
 padding: 0;
 }
-/* #login .modal-dialog {
-  -webkit-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  top: 50%;
-  margin: 0 auto; } */
-
 
 /* navbar code here */
 
@@ -357,9 +324,9 @@ width: 100%;
 }
 .sidebar-list-item{
   display: flex;
-  /* justify-content: center; */
+ 
   align-items: center;
-  /* padding: 0 !important; */
+
   font-size: 16px;
   margin: 0 !important;
 }
@@ -368,28 +335,33 @@ justify-content: center;
 padding: 0 !important;
 }
 .ant-btn:hover, .ant-btn:focus, .ant-btn:active {
-  /* color: #40a9ff; */
-  /* background: #fff; */
-  /* border-color: #40a9ff; */
   border-color: rgba(0,0,0,0) !important;
-  /* color: #ffffff !important; */
 }
 .ant-btn{
   height: 100%;
 }
 
+/* profile code */
+.ant-tabs.ant-tabs-top{
+  width: 100%;
+}
+
+/* users code */
+.users-table{
+  width: 1100%;
+}
+/* charts code */
+.charts-sec{
+  width: 100%;
+}
 /* Media screens */
 @media only screen and (min-width: 600px) {
   .username {
     justify-content: center;
-    /* width: 470px;
-    margin-left: -60px; */
   }
 
   .password {
     justify-content: center;
-    /* margin-left: -117px;
-    width: 600px; */
     margin-bottom: 5px;
   }
   .userForm {
@@ -399,11 +371,6 @@ padding: 0 !important;
   .editUserForm .ant-btn-primary {
     margin-left: 80px;
   }
-
-  /* .ant-dropdown-link-profile {
-    position: relative;
-    left: 85%;
-  } */
 }
 @media (max-width: 420px) {
   .modal.show  {
