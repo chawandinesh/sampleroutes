@@ -51,7 +51,7 @@ class Main extends React.PureComponent {
               <h3 className="m-0">AHEX</h3>
             </div>
             {/* <img src={Logo} className="logo" alt="ahex-logo" /> */}
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} selectedKeys={this.props.menuSelelectedKey}>
               <Menu.Item key="1" icon={<DashboardOutlined />} className="sidebar-list-item" >
                 <Link to="/dashboard">Dashboard</Link>
               </Menu.Item>
@@ -90,7 +90,6 @@ class Main extends React.PureComponent {
               style={{
                 margin: "24px 16px",
                 padding: 24,
-                minHeight: 280,
               }}
             >
               <AppRoutes isLoginSuccess={isLoginSuccess} />

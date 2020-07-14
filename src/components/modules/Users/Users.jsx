@@ -24,6 +24,10 @@ class Users extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.atnMenuSelectedKey("3");
+  }
+
   /**
    * @method @name handleEditButton
    * Show modal and fill existing details into form
@@ -88,7 +92,7 @@ class Users extends Component {
         message.success("Deleted successfully");
       },
       onCancel() {
-        console.log("Cancel");
+        console.log("cancelled");
         message.error("Canceled");
       },
     });
@@ -99,7 +103,7 @@ class Users extends Component {
    */
   render() {
     return (
-      <div>
+      <div className="users-table">
         <UserTable
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}

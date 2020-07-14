@@ -1,12 +1,8 @@
 /**
  * Actions for Add,Edit and Delete the user
  */
-import {
-  USER_ADD,
-  USER_DELETE,
-  USER_EDIT,
-  USER_ADD_MODAL_TOGGLE,
-} from "../actionTypes/userActionTypes";
+
+import userActionTypes from "../actionTypes/userActionTypes";
 import { store } from "../store";
 
 /**
@@ -16,7 +12,7 @@ import { store } from "../store";
  */
 const atnAddUser = (user) => {
   return {
-    type: USER_ADD,
+    type: userActionTypes.USER_ADD,
     user,
   };
 };
@@ -27,7 +23,7 @@ const atnAddUser = (user) => {
  */
 const atnUserModalToggle = () => {
   return {
-    type: USER_ADD_MODAL_TOGGLE,
+    type: userActionTypes.USER_ADD_MODAL_TOGGLE,
   };
 };
 
@@ -40,7 +36,7 @@ const atnDeleteUser = (index) => {
   const { users } = store.getState();
   users.splice(index, 1);
   return {
-    type: USER_DELETE,
+    type: userActionTypes.USER_DELETE,
     users,
   };
 };
@@ -55,9 +51,27 @@ const atnEditUser = (index, value) => {
   const { users } = store.getState();
   users.splice(index, 1, value);
   return {
-    type: USER_EDIT,
+    type: userActionTypes.USER_EDIT,
     users,
   };
 };
 
-export default { atnAddUser, atnDeleteUser, atnEditUser, atnUserModalToggle };
+/**
+ * Updates the user
+ * @function @name atnMenuSelectedKey
+ * @param {string} index - key for menu pannel
+ */
+const atnMenuSelectedKey = (value) => {
+  return {
+    type: userActionTypes.MENU_SELECT_KEY,
+    value,
+  };
+};
+
+export default {
+  atnAddUser,
+  atnDeleteUser,
+  atnEditUser,
+  atnUserModalToggle,
+  atnMenuSelectedKey,
+};

@@ -1,5 +1,6 @@
 /**
  * Action types for Edit profile data
  */
-export const PROFILE_EDIT = "PROFILE_EDIT";
-export const PROFILE_IMAGE_UPLOAD = "PROFILE_IMAGE_UPLOAD";
+const PROFILE_EDIT = "PROFILE_EDIT";
+const PROFILE_IMAGE_UPLOAD = "PROFILE_IMAGE_UPLOAD";
+export default { PROFILE_EDIT, PROFILE_IMAGE_UPLOAD };

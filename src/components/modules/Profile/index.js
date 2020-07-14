@@ -4,6 +4,7 @@
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import profileActions from "../../../redux/actions/profileActions";
+import userActions from "../../../redux/actions/userActions";
 
 /**
  * mapStateToProps to send state to the component
@@ -27,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     atnEditProfile: (e) => dispatch(profileActions.atnEditProfile(e)),
     atnImageUpload: (e) => dispatch(profileActions.atnImageUpload(e)),
+    atnMenuSelectedKey: (e) => dispatch(userActions.atnMenuSelectedKey(e)),
   };
 };
 

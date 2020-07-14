@@ -15,6 +15,13 @@ const { TabPane } = Tabs;
  */
 class Profile extends Component {
   /**
+   * @method componentDidMount
+   */
+
+  componentDidMount() {
+    this.props.atnMenuSelectedKey("2");
+  }
+  /**
    * @method render
    * renders the ui on profile page
    */
