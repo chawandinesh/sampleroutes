@@ -7,8 +7,7 @@ import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import loginAuth from "../../../assets/data/login/login.json";
-import Logo from "../../../assets/images/ahex-logo.png";
-
+import { MailOutlined } from "@ant-design/icons";
 /**
  * @class @name Login
  * @classdesc Login form for the Application
@@ -66,8 +65,11 @@ class Login extends Component {
         style={{ transition: "none" }}
       >
         <Modal.Body>
-          <div style={{ textAlign: "center", marginBottom: "30px" }}>
-            <img src={Logo} alt="ahex-logo" />
+          <div
+            style={{ textAlign: "center", marginBottom: "20px" }}
+            className="logo-container"
+          >
+            <h3 className="m-0">AHEX</h3>
           </div>
           <Form
             {...this.layout}
@@ -80,7 +82,7 @@ class Login extends Component {
               className="username"
               rules={[{ required: true, message: "Please input your email!" }]}
             >
-              <Input placeholder="Email" />
+              <Input placeholder="Email" suffix={<MailOutlined />} />
             </Form.Item>
 
             <Form.Item
@@ -93,7 +95,11 @@ class Login extends Component {
               <Input.Password placeholder="Password" />
             </Form.Item>
 
-            <Form.Item {...this.tailLayout} name="remember">
+            <Form.Item
+              {...this.tailLayout}
+              name="remember"
+              className="remember-me"
+            >
               <Checkbox
                 checked={this.state.checkedin}
                 onChange={this.handleChecked}
@@ -102,20 +108,20 @@ class Login extends Component {
               </Checkbox>
             </Form.Item>
 
-            <Form.Item {...this.tailLayout}>
+            <Form.Item {...this.tailLayout} className="text-center">
               <Button type="primary" htmlType="submit" className="login-button">
-                Signin
+                Sign In
               </Button>
             </Form.Item>
-            <Row gutter={[80]}>
-              <Col span={12}>
+            <Row className="footer-modal m-0" gutter={[80]}>
+              <Col>
                 <Form.Item {...this.tailLayout}>
                   <Button className="ForgotPasswordLogin" type="link">
                     Forgot Password?
                   </Button>
                 </Form.Item>
               </Col>
-              <Col span={12}>
+              <Col>
                 <Form.Item {...this.tailLayout}>
                   <Button className="LoginRegister" type="link">
                     Register

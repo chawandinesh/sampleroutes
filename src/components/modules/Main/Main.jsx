@@ -12,7 +12,6 @@ import {
   TeamOutlined,
   LineChartOutlined,
 } from "@ant-design/icons";
-import Logo from "../../../assets/images/ahex-logo.png";
 import AppRoutes from "../../../AppRoutes";
 import HeaderProfile from "./Header";
 
@@ -46,47 +45,67 @@ class Main extends React.PureComponent {
       <Router>
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <img src={Logo} className="logo" alt="ahex-logo" />
+            <div className="dashboard-logo">
+              <h3 className="m-0">AHEX</h3>
+            </div>
             <Menu
               theme="dark"
               mode="inline"
               defaultSelectedKeys={["1"]}
               selectedKeys={this.props.menuSelelectedKey}
             >
-              <Menu.Item key="1" icon={<DashboardOutlined />}>
+              <Menu.Item
+                key="1"
+                icon={<DashboardOutlined />}
+                className="sidebar-list-item"
+              >
                 <Link to="/dashboard">Dashboard</Link>
               </Menu.Item>
-              <Menu.Item key="2" icon={<UserOutlined />}>
+              <Menu.Item
+                key="2"
+                icon={<UserOutlined />}
+                className="sidebar-list-item"
+              >
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<TeamOutlined />}>
+              <Menu.Item
+                key="3"
+                icon={<TeamOutlined />}
+                className="sidebar-list-item"
+              >
                 <Link to="/users">Users</Link>
               </Menu.Item>
-              <Menu.Item key="4" icon={<LineChartOutlined />}>
+              <Menu.Item
+                key="4"
+                icon={<LineChartOutlined />}
+                className="sidebar-list-item"
+              >
                 <Link to="/charts">Charts</Link>
               </Menu.Item>
             </Menu>
           </Sider>
           <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }}>
-              <div>
-                {React.createElement(
-                  this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                  {
-                    className: "trigger",
-                    onClick: this.toggle,
-                  }
-                )}
-              </div>
-              <div className="header-collapse-profile">
-                <HeaderProfile
-                  atnLogout={this.props.atnLogout}
-                  isLoginSuccess={this.props.isLoginSuccess}
-                  imageList={this.props.imageList}
-                  atnMenuSelectedKey={this.props.atnMenuSelectedKey}
-                />
-              </div>
-            </Header>
+            <div>
+              <Header className="site-layout-background" style={{ padding: 0 }}>
+                <div className="nav-header">
+                  {React.createElement(
+                    this.state.collapsed
+                      ? MenuUnfoldOutlined
+                      : MenuFoldOutlined,
+                    {
+                      className: "trigger",
+                      onClick: this.toggle,
+                    }
+                  )}
+                  <HeaderProfile
+                    className="user-btn"
+                    atnLogout={this.props.atnLogout}
+                    isLoginSuccess={this.props.isLoginSuccess}
+                    imageList={this.props.imageList}
+                  />
+                </div>
+              </Header>
+            </div>
             <Content
               className="site-layout-background"
               style={{
