@@ -12,7 +12,7 @@ import {
   TeamOutlined,
   LineChartOutlined,
 } from "@ant-design/icons";
-import Logo from "../../../assets/images/ahex-logo.png";
+import Logo from "../../../assets/images/logo.svg";
 import AppRoutes from "../../../AppRoutes";
 import HeaderProfile from "./Header";
 
@@ -46,18 +46,22 @@ class Main extends React.PureComponent {
       <Router>
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <img src={Logo} className="logo" alt="ahex-logo" />
+            <div className="dashboard-logo">
+              {/* <img src={Logo} className="logo" alt="ahex-logo" className="img-fluid" /> */}
+              <h3 className="m-0">AHEX</h3>
+            </div>
+            {/* <img src={Logo} className="logo" alt="ahex-logo" /> */}
             <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-              <Menu.Item key="1" icon={<DashboardOutlined />}>
+              <Menu.Item key="1" icon={<DashboardOutlined />} className="sidebar-list-item" >
                 <Link to="/dashboard">Dashboard</Link>
               </Menu.Item>
-              <Menu.Item key="2" icon={<UserOutlined />}>
+              <Menu.Item key="2" icon={<UserOutlined />}  className="sidebar-list-item">
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<TeamOutlined />}>
+              <Menu.Item key="3" icon={<TeamOutlined />}  className="sidebar-list-item">
                 <Link to="/users">Users</Link>
               </Menu.Item>
-              <Menu.Item key="4" icon={<LineChartOutlined />}>
+              <Menu.Item key="4" icon={<LineChartOutlined />}  className="sidebar-list-item">
                 <Link to="/charts">Charts</Link>
               </Menu.Item>
             </Menu>
@@ -65,18 +69,20 @@ class Main extends React.PureComponent {
           <Layout className="site-layout">
             <div>
               <Header className="site-layout-background" style={{ padding: 0 }}>
-                {React.createElement(
-                  this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                  {
-                    className: "trigger",
-                    onClick: this.toggle,
-                  }
-                )}
-                <HeaderProfile
-                  atnLogout={this.props.atnLogout}
-                  isLoginSuccess={this.props.isLoginSuccess}
-                  imageList={this.props.imageList}
-                />
+                <div className="nav-header">
+                  {React.createElement(
+                    this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+                    {
+                      className: "trigger",
+                      onClick: this.toggle,
+                    }
+                  )}
+                  <HeaderProfile className="user-btn"
+                    atnLogout={this.props.atnLogout}
+                    isLoginSuccess={this.props.isLoginSuccess}
+                    imageList={this.props.imageList}
+                  />
+                </div>
               </Header>
             </div>
             <Content

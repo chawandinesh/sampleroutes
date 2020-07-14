@@ -1,3 +1,15 @@
+html{
+  font-size: 16px;
+    --antd-wave-shadow-color: rgba(0,0,0,0);
+    --scroll-bar: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
 .App {
   text-align: center;
 }
@@ -73,14 +85,24 @@
   height: 100vh;
 }
 
-.logo {
-  height: 50px;
-  padding-left: 20px;
+.dashboard-logo {
+  /* height: 50px;
+  padding-left: 20px; */
+  height: 64px;
+  color: #ffffff;
+  /* width: 150px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+} 
+.dashboard-logo h3{
+  color: #ffffff;
 }
 
-.ant-menu-inline {
+/* .ant-menu-inline {
   padding-top: 30px;
-}
+} */
 
 .forgotPassword {
   margin-left: 300px;
@@ -146,15 +168,17 @@
   justify-content: flex-end;
 }
 
-.ant-dropdown-link-profile {
+/* .ant-dropdown-link-profile {
   position: relative;
   left: 65%;
-}
+} */
 
-.anticon-down svg {
+.anticon-down svg ,.anticon-menu-fold{
+  font-size: 18px;
+}
+.anticon-menu-fold,.anticon-menu-unfold{
   font-size: 20px;
 }
-
 .dot {
   height: 50px;
   width: 50px;
@@ -162,15 +186,16 @@
   color: white;
   border-radius: 50%;
   display: inline-block;
-  position: relative;
-  top: 5px;
+  /* position: relative;
+  top: 5px; */
   text-align: center;
-  font-size: 33px;
+  font-size: 31px;
 }
 
 .dot .text {
-  position: relative;
-  top: -5px;
+  /* position: relative;
+  top: -5px; */
+  margin: 0;
 }
 
 .profie-view-card {
@@ -178,10 +203,10 @@
   height: 300px;
 }
 
-.ant-dropdown-link-profile {
+/* .ant-dropdown-link-profile {
   position: relative;
   border: none;
-}
+} */
 
 .profile-view-image-list {
   display: flex;
@@ -214,7 +239,22 @@
 }
 
 /* Styles here */
-
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none !important;
+}
+button{
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+button:focus{
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
 .logo-container{
 width: 200px;
 margin: 0 auto;
@@ -256,7 +296,7 @@ margin: 0;
 }
 .ant-btn-link{
   color: #6f8ba4;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
 }
@@ -273,6 +313,15 @@ button{
   align-items: center;
   justify-content: center;
 }
+.ant-dropdown-link-profile{
+width: 120px;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: none;
+border: 0;
+padding: 0;
+}
 /* #login .modal-dialog {
   -webkit-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
@@ -283,10 +332,35 @@ button{
 
 /* navbar code here */
 
-
-
-
-
+.nav-header{
+padding: 0 15px;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.sidebar-list-item{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* padding: 0 !important; */
+  font-size: 16px;
+  margin: 0 !important;
+}
+.ant-layout-sider-collapsed .sidebar-list-item{
+justify-content: center;
+padding: 0 !important;
+}
+.ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+  /* color: #40a9ff; */
+  /* background: #fff; */
+  /* border-color: #40a9ff; */
+  border-color: rgba(0,0,0,0) !important;
+  /* color: #ffffff !important; */
+}
+.ant-btn{
+  height: 100%;
+}
 
 /* Media screens */
 @media only screen and (min-width: 600px) {
@@ -310,10 +384,10 @@ button{
     margin-left: 80px;
   }
 
-  .ant-dropdown-link-profile {
+  /* .ant-dropdown-link-profile {
     position: relative;
     left: 85%;
-  }
+  } */
 }
 @media (max-width: 420px) {
   .modal.show  {
