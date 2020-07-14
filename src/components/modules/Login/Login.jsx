@@ -58,7 +58,13 @@ class Login extends Component {
    */
   render() {
     return (
-      <Modal show={true} backdrop="static" keyboard={false}>
+      <Modal
+        show={true}
+        backdrop="static"
+        keyboard={false}
+        className="login-modal"
+        style={{ transition: "none" }}
+      >
         <Modal.Body>
           <div style={{ textAlign: "center", marginBottom: "30px" }}>
             <img src={Logo} alt="ahex-logo" />
